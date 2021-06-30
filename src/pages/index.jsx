@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/home.module.scss";
 import Link from "next/link";
+import { useRouter } from 'next/router';
 import axios, { CancelTokenSource } from "axios";
 import { api } from "../services/api";
 import { useState } from "react";
@@ -16,8 +17,6 @@ import { useState } from "react";
 // todo:
 // implement search
 // dinamy routing and path
-// get path // aparently we can use getStaticPaths to generate our
-// pages without using getStaticProps or serverside which is good
 // improve our json file
 // episode list
 // prettify
@@ -58,22 +57,34 @@ export default function Home() {
       <div>
         <h1>hisashiburi</h1>
       </div>
-      <input type="search" name="" className={styles.search} onChange={handleSearch} />
+      <input
+        type="search"
+        name=""
+        className={styles.search}
+        onChange={handleSearch}
+      />
       <div className={styles.characterResults}>
         {characters.length > 0 &&
           characters.map((character) => {
             return (
-              <div className={styles.characterCard}key={character.id}>
-                <Image
-                  className={styles.characterImage}
-                  width={100}
-                  height={100}
-                  src={character.icon}
-                  alt=""
-                />
-                <p>
-                  {character.name} {character.lastName}
-                </p>
+              <div className={styles.characterCard} key={character.id}>
+                <Link href={{
+                  pathname: '/characters/[character]',
+                  query: { character: character.name },
+                }}>
+                  <a>
+                  <Image
+                    className={styles.characterImage}
+                    width={100}
+                    height={100}
+                    src={character.icon}
+                    alt=""
+                  />
+                  <p>
+                    {character.name} {character.lastName}
+                  </p>
+                </a>
+                </Link>
               </div>
             );
           })}
