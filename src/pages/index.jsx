@@ -2,7 +2,6 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/home.module.scss";
 import Link from "next/link";
-import { useRouter } from 'next/router';
 import axios, { CancelTokenSource } from "axios";
 import { api } from "../services/api";
 import { useState } from "react";

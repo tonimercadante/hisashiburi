@@ -23,6 +23,13 @@ export default function Characters({ data }) {
           <p>{d.name}</p>
           <p>{d.lastName}</p>
           <img src={d.cover} alt={d.cover} />
+          {d.episodes.map((episode) => (
+            <div key={episode.id}>
+              <p>{episode.title}</p>
+              <p>{episode.episode}</p>
+
+            </div>
+          ))}
         </div>
       ))}
       <p>Characters: {router.query.character}</p>
