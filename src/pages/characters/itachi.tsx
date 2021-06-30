@@ -15,6 +15,7 @@ export default function Characters() {
           <p>Naruto, Naruto Shippuden</p>
         </div>
       </div>
+      
       <div className={styles.episodesList}>
         <h3>Anime Name</h3>
         <div className={styles.episode}>
@@ -29,89 +30,10 @@ export default function Characters() {
           </div>
         </div>
 
-        <div className={styles.episode}>
-          <div className={styles.episodeNumber}>
-            <p>46</p>
-          </div>
-          <div className={styles.episodeTitle}>
-            <p>Sandaime yo, Towa ni……!!</p>
-          </div>
-          <div className={styles.episodeDetails}>
-            <p>+</p>
-          </div>
-        </div>
+     
+      
 
-        <div className={styles.episode}>
-          <div className={styles.episodeNumber}>
-            <p>46</p>
-          </div>
-          <div className={styles.episodeTitle}>
-            <p>Sandaime yo, Towa ni……!!</p>
-          </div>
-          <div className={styles.episodeDetails}>
-            <p>+</p>
-          </div>
-        </div>
-
-        <div className={styles.episode}>
-          <div className={styles.episodeNumber}>
-            <p>46</p>
-          </div>
-          <div className={styles.episodeTitle}>
-            <p>Sandaime yo, Towa ni……!!</p>
-          </div>
-          <div className={styles.episodeDetails}>
-            <p>+</p>
-          </div>
-        </div>
-
-        <div className={styles.episode}>
-          <div className={styles.episodeNumber}>
-            <p>46</p>
-          </div>
-          <div className={styles.episodeTitle}>
-            <p>Sandaime yo, Towa ni……!!</p>
-          </div>
-          <div className={styles.episodeDetails}>
-            <p>+</p>
-          </div>
-        </div>
-
-        <div className={styles.episode}>
-          <div className={styles.episodeNumber}>
-            <p>46</p>
-          </div>
-          <div className={styles.episodeTitle}>
-            <p>Sandaime yo, Towa ni……!!</p>
-          </div>
-          <div className={styles.episodeDetails}>
-            <p>+</p>
-          </div>
-        </div>
-
-        <div className={styles.episode}>
-          <div className={styles.episodeNumber}>
-            <p>46</p>
-          </div>
-          <div className={styles.episodeTitle}>
-            <p>Sandaime yo, Towa ni……!!</p>
-          </div>
-          <div className={styles.episodeDetails}>
-            <p>+</p>
-          </div>
-        </div>
-
-        <div className={styles.episode}>
-          <div className={styles.episodeNumber}>
-            <p>46</p>
-          </div>
-          <div className={styles.episodeTitle}>
-            <p>Sandaime yo, Towa ni……!!</p>
-          </div>
-          <div className={styles.episodeDetails}>
-            <p>+</p>
-          </div>
-        </div>
+     
       </div>
     </div>
   );
