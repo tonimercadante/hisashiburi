@@ -6,10 +6,16 @@ import axios, { CancelTokenSource } from "axios";
 import { api } from "../services/api";
 import { useState } from "react";
 
-// 1. generate our dynamic route from the results we got.
-
-// watch dev ed ignite game;
+// 1. Improve our ui
+// 2. Implement our modal
+// 3. Find an best id or search for anime then character name or
+// id and name but should we do this because would be easy to anyone predic
+// and do alot of reqs to our server
+// authenticate our api? use redirect?
+// change the anime that a character appears and put it in the episodes and array then
+// separe our search component and show a serch result page
 // birds fliyng, if found some data, they don't come back
+// 4. fuzzy search
 // WE WILL MAKE A SEARCH PER EACH KEY TYPED AND THEN
 // SHOW THE CHARACTERS DOWN DOING THE ANIMATION LIKE NETFLIX
 // graphql
@@ -69,7 +75,7 @@ export default function Home() {
               <div className={styles.characterCard} key={character.id}>
                 <Link href={{
                   pathname: '/characters/[character]',
-                  query: { character: character.name },
+                  query: { character: character.id },
                 }}>
                   <a>
                   <Image
@@ -86,7 +92,9 @@ export default function Home() {
                 </Link>
               </div>
             );
-          })}
+          })} : {
+            <h1>no data</h1>
+          }
       </div>
     </div>
   );

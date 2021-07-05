@@ -3,7 +3,7 @@ import { apiResolver } from "next/dist/next-server/server/api-utils";
 import { useRouter } from "next/router";
 import { api } from "../../services/api";
 import styles from "./styles.module.scss";
-
+//slider caurosel in the cover to switch photos of the character
 // type Character = {
 //   id: String;
 //   name: String;
@@ -54,9 +54,9 @@ export default function Characters({ data }) {
               ))}
             </p>
           </div>
+
           {d.episodes.map((episode) => (
             <div className={styles.episodesList}>
-              <h3>{animeName}</h3>
               <div className={styles.episode}>
                 <div className={styles.episodeNumber}>
                   <p>{episode.episode}</p>
@@ -73,7 +73,7 @@ export default function Characters({ data }) {
         </div>
       ))}
 
-    
+
     </>
   );
 }
@@ -87,7 +87,8 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(ctx) {
   const { character } = ctx.params;
-  const { data } = await api.get(`characters?name=${character}`);
+  console.log("KRLLLLLL" + ctx.id);
+  const { data } = await api.get(`characters/${character}`);
 
   return {
     props: { data },
