@@ -3,3 +3,25 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: var(--main-black);
+}
+
+:root {
+  --main-black: #1e1e1e;
+  --hero-text-color: #fff;
+  --input-color: #56575648;
+  --input-button-color: #313131;
+  --background-gray: #ededed;
+  --white-background: #faf9f9;
+  --white: #fff;
+  --text-grey: #696969;
+  --text-grey-2: #5c5c5c;
+  --error: #ff6767f1;
+  --success: #4afa67;
+}

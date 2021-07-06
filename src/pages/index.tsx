@@ -4,7 +4,8 @@ import styles from "../styles/home.module.scss";
 import Search from "./components/Search";
 
 export default function Home() {
-  const description = "Discover when your favorites charachters are on screen!";
+  const description =
+    "Discover when your<br> favorite charachters<br> are on screen!";
   const quantity = "Browse over +100.000 characters";
   return (
     <div className={styles.container}>
@@ -16,9 +17,16 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.home}>
-        <h1>{description}</h1>
-        <h3>{quantity}</h3>
-        <Search />
+        <div className={styles.banner}>
+          <h1>
+            Discover when your
+            <br /> favorite charachters
+            <br /> are on screen!
+          </h1>
+          <h3>{quantity}</h3>
+          <Search />
+        </div>
+        <div>results</div>
       </main>
 
       <footer className={styles.footer}></footer>

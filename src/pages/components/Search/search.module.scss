@@ -1,8 +1,25 @@
 .search {
+  position: absolute;
+  // top: 35vh;
+  display: flex;
+  flex-direction: column;
+  // background-color: aliceblue;
+  height: 51vh;
+  justify-content: flex-end;
   input {
+    display: inline-block;
     border-radius: 3px;
     border: none;
-    background-color: red;
-    margin-bottom: 100px;
+    background-color: aliceblue;
+    padding: 2rem 10rem;
   }
+}
+.searchWrapper {
+  position: relative;
+}
+.searchIcon {
+  position: absolute;
+  right: 0;
+  color: orangered;
+  width: 30px;
 }
