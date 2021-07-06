@@ -7,7 +7,15 @@ import { api } from "../services/api";
 import { useState } from "react";
 
 // 1. Improve our ui
-// 2. Implement our modal
+// 1.1 Search bar
+// 1.2 Font size
+// 1.3 Font shadows
+// 1.4 Bg image correct position
+// 1.5 shadow transition betwen bg image and bg color
+// 1.6 character card 
+// 1.7 modal improvements
+// 2. Implement our modal with next
+// add a load more button to prevent unecessary api calls for windows resize
 // 3. Find an best id or search for anime then character name or
 // id and name but should we do this because would be easy to anyone predic
 // and do alot of reqs to our server
@@ -16,15 +24,8 @@ import { useState } from "react";
 // separe our search component and show a serch result page
 // birds fliyng, if found some data, they don't come back
 // 4. fuzzy search
-// WE WILL MAKE A SEARCH PER EACH KEY TYPED AND THEN
-// SHOW THE CHARACTERS DOWN DOING THE ANIMATION LIKE NETFLIX
 // graphql
 // todo:
-// implement search
-// dinamy routing and path
-// improve our json file
-// episode list
-// prettify
 // THEN I KNOW WHAT hehe almost forgot but i wont cv
 // axios cancel request
 // on change not working on mobile
