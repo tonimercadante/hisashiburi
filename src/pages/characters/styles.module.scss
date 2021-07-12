@@ -1,0 +1,67 @@
+.characterModal {
+  color: rgb(0, 194, 255);
+}
+
+.characterBanner {
+  width: 65%;
+  margin: auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.content {
+  background-color: blueviolet;
+}
+.modal {
+  width: 65%;
+
+  position: "fixed";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  border: 2px solid #ccc;
+}
+
+.modalOver {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  right: 40px;
+  bottom: 40px;
+  border: 1px solid #ccc;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 4px;
+  outline: none;
+  padding: 20px;
+}
+
+.episode {
+  color: whitesmoke;
+  width: 65%;
+  margin: auto;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: solid 1px rgb(0, 195, 255);
+  border-radius: 0.6rem;
+  padding: 3rem;
+}
+.episodeDetails {
+  flex: 1;
+}
+.episodeInfo {
+  display: flex;
+  flex-direction: column;
+}
+.episodeNumberTitle {
+  display: flex;
+}
+.episodeMore {
+  //   flex: 1;
+}

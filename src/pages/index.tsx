@@ -1,12 +1,23 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/home.module.scss";
+//Components
 import Search from "./components/Search";
+import Character from "./components/Character";
 
 export default function Home() {
+  let name = "Itachi Uchiha";
+  let gaara = "Sabaku no Gaara";
+  let minato = "Minato Namikaze";
+
+  let imageUrl = "/images/itachi.jpg";
+  let gaaraUrl = "/images/gaara.jpg";
+  let minatoUrl = "/images/minato.jpg";
+
   const description =
     "Discover when your<br> favorite charachters<br> are on screen!";
   const quantity = "Browse over +100.000 characters";
+
   return (
     <div className={styles.container}>
       <Head>
@@ -18,15 +29,36 @@ export default function Home() {
       </Head>
       <main className={styles.home}>
         <div className={styles.banner}>
+          <Image
+            className={styles.bannerImage}
+            src="/images/header-image.png"
+            layout="fill"
+            objectFit="cover"
+            quality="100"
+          />
           <h1>
             Discover when your
-            <br /> favorite charachters
+            <br /> favorite characters
             <br /> are on screen!
           </h1>
           <h3>{quantity}</h3>
           <Search />
         </div>
-        <div>results</div>
+
+        <div className={styles.results}>
+          <Character name={name} imageUrl={imageUrl} />
+          <Character name={gaara} imageUrl={gaaraUrl} />
+          <Character name={minato} imageUrl={minatoUrl} />
+          <Character name={name} imageUrl={imageUrl} />
+          <Character name={gaara} imageUrl={gaaraUrl} />
+          <Character name={minato} imageUrl={minatoUrl} />
+          <Character name={name} imageUrl={imageUrl} />
+          <Character name={gaara} imageUrl={gaaraUrl} />
+          <Character name={minato} imageUrl={minatoUrl} />
+          <Character name={name} imageUrl={imageUrl} />
+          <Character name={gaara} imageUrl={gaaraUrl} />
+          <Character name={minato} imageUrl={minatoUrl} />
+        </div>
       </main>
 
       <footer className={styles.footer}></footer>

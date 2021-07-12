@@ -4,22 +4,34 @@
   display: flex;
   flex-direction: column;
   // background-color: aliceblue;
-  height: 51vh;
+  height: 52.5vh;
+  width: 70%;
+  min-width: 500px;
+  max-width: 700px;
+  pointer-events: none;
+  z-index: 9999;
+
   justify-content: flex-end;
   input {
-    display: inline-block;
-    border-radius: 3px;
+    pointer-events: all;
+    border-radius: 0.8rem;
     border: none;
-    background-color: aliceblue;
-    padding: 2rem 10rem;
+    padding: 2rem 2rem;
+    font-size: 2rem;
+    width: 100%;
+    &:focus {
+      outline: solid 2px var(--input-color);
+    }
   }
 }
 .searchWrapper {
   position: relative;
 }
 .searchIcon {
+  cursor: pointer;
   position: absolute;
-  right: 0;
-  color: orangered;
+  right: 2rem;
+  color: var(--input-color);
   width: 30px;
+  top: 1.9rem;
 }

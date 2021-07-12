@@ -6,8 +6,12 @@ export default function Search() {
   return (
     <div className={styles.search}>
       <div className={styles.searchWrapper}>
-        <input type="search" />
-        <FontAwesomeIcon icon={faSearch} className={styles.searchIcon} />
+        <input type="text" placeholder="Search..." />
+        <FontAwesomeIcon
+          icon={faSearch}
+          className={styles.searchIcon}
+          size="3x"
+        />
       </div>
     </div>
   );

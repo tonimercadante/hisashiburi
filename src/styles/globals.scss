@@ -10,12 +10,24 @@ html {
 
 body {
   background-color: var(--main-black);
+  color: white;
+  font-family: Roboto;
+}
+h1 {
+  font-size: 4rem;
+  line-height: 6rem;
 }
 
+h3 {
+  font-size: 2rem;
+  line-height: 6rem;
+}
 :root {
-  --main-black: #1e1e1e;
+  --main-black: #141414;
   --hero-text-color: #fff;
-  --input-color: #56575648;
+  --input-color: #e4d8c0;
+  --character-name-color: #efefef;
+
   --input-button-color: #313131;
   --background-gray: #ededed;
   --white-background: #faf9f9;
