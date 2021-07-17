@@ -3,7 +3,18 @@ import { useEffect } from "react";
 import { useRouter } from "next/router";
 import styles from "./styles.module.scss";
 import Image from "next/image";
-
+import getTimeData from "../../Utils/getTimeData";
+// Possible approaches to the bar thing:
+// 1. create a lot of bar and give them the absolute position and
+// then position then the way i need so i need to have a way to get
+// the starting position.
+// 2. create a lot of bars close to each other like fragmenting the
+// time it appears like not appears at 0:00 to 4:00 then the bar 
+// will have one color representing some percentage then from 4:00
+// to 8:40 the character appears, so we create a new bar and to 8:40
+// to the final he doesnt appears anymore, so we create a new bar to
+// the end of the time
+// 3. apexchartsjs
 Modal.setAppElement("#__next");
 
 export default function Characters() {
@@ -42,7 +53,10 @@ export default function Characters() {
                   <p>Itachi-The rogue ninja</p>
                 </div>
                 <div className={styles.episodeTimeBar}>
-                  <p>bar</p>
+                    <div className={styles.bar}>
+                    {Object.entries(data).map(([key,value],i) => 
+                    <div style={{'width': `${value.percent}%`, 'backgroundColor': value.inorout ? '#00c3ff' : 'white'}} key={i}>{`${value.percent}`}</div>) }
+                    </div>
                 </div>
               </div>
             </div>
@@ -57,3 +71,6 @@ export default function Characters() {
     </>
   );
 }
+let times = [{"start": 180, "end": 540}, {"start": 600, "end": 720 }]
+let total_duration = 1200;
+let data = getTimeData(times, total_duration);
