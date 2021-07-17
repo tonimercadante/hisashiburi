@@ -1,5 +1,6 @@
 .characterModal {
-  color: rgb(0, 194, 255);
+  background-color: #131313;
+  color: rgb(213, 215, 216);
 }
 
 .characterBanner {
@@ -10,43 +11,64 @@
   align-items: center;
   flex-direction: column;
 }
-
-.content {
-  background-color: blueviolet;
+.episodes {
+  margin: auto;
+  width: 55%;
+  h2 {
+    padding: 0 3rem;
+  }
 }
-
-
+.titles {
+  display: flex;
+  justify-content: space-between;
+}
+.episodesText {
+  padding: 1.4rem 3rem;
+}
 .episode {
   color: whitesmoke;
-  width: 65%;
   margin: auto;
   background-color: black;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
   border: solid 1px #00c3ff;
   border-radius: 0.6rem;
-  padding: 3rem;
+  padding: 1.4rem;
+  width: 95%;
+  &:hover {
+    width: 100%;
+
+    padding: 2rem 1.4rem;
+    transition: all ease-in-out 0.5s;
+  }
 }
 .episodeDetails {
-  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 2rem;
 }
 .episodeInfo {
   display: flex;
-  flex-direction: column;
 }
-.episodeNumberTitle {
-  display: flex;
-}
-.episodeMore {
-color:aqua}
 
 .bar {
   width: 100%;
-  height: 1rem;
-  background-color: gray;
+  height: 1.6rem;
+  background-color: white;
+  border-radius: 5px;
   div {
     display: inline-block;
-  text-align: center;}
-  
+    text-align: center;
+  }
+}
+.bars {
+  height: 1.6rem;
+  &:last-of-type {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+  &:first-of-type {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
 }

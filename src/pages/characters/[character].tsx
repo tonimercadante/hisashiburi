@@ -9,7 +9,7 @@ import getTimeData from "../../Utils/getTimeData";
 // then position then the way i need so i need to have a way to get
 // the starting position.
 // 2. create a lot of bars close to each other like fragmenting the
-// time it appears like not appears at 0:00 to 4:00 then the bar 
+// time it appears like not appears at 0:00 to 4:00 then the bar
 // will have one color representing some percentage then from 4:00
 // to 8:40 the character appears, so we create a new bar and to 8:40
 // to the final he doesnt appears anymore, so we create a new bar to
@@ -39,29 +39,37 @@ export default function Characters() {
             <Image src="/images/itachi_cover.jpg" width="1000" height="200" />
             <h2>Itachi Uchiha</h2>
           </div>
-          <div className={styles.animemanga}>
-            <p>Anime | Manga</p>
-          </div>
-          <div>
-            <p>Naruto</p>
-          </div>
-          <div className={styles.episode}>
-            <div className={styles.episodeDetails}>
-              <div className={styles.episodeInfo}>
-                <div className={styles.episodeNumberTitle}>
+
+          <div className={styles.episodes}>
+            <h2>Naruto</h2>
+            <div className={styles.titles}>
+              <p className={styles.episodesText}>Episodes (7)</p>
+              <p className={styles.episodesText}>Season 1</p>
+            </div>
+            <div className={styles.episode}>
+              <div className={styles.episodeDetails}>
+                <div className={styles.episodeInfo}>
                   <p>47.</p>
                   <p>Itachi-The rogue ninja</p>
                 </div>
-                <div className={styles.episodeTimeBar}>
-                    <div className={styles.bar}>
-                    {Object.entries(data).map(([key,value],i) => 
-                    <div style={{'width': `${value.percent}%`, 'backgroundColor': value.inorout ? '#00c3ff' : 'white'}} key={i}>{`${value.percent}`}</div>) }
-                    </div>
+                <div className={styles.episodeMore}>
+                  <p>+</p>
                 </div>
               </div>
-            </div>
-            <div className={styles.episodeMore}>
-              <p>+</p>
+              <div className={styles.episodeTimeBar}>
+                <div className={styles.bar}>
+                  {Object.entries(data).map(([key, value], i) => (
+                    <div
+                      style={{
+                        width: `${value.percent}%`,
+                        backgroundColor: value.inorout ? "#00c3ff" : "white",
+                      }}
+                      className={styles.bars}
+                      key={i}
+                    >{`${value.percent}`}</div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -71,6 +79,9 @@ export default function Characters() {
     </>
   );
 }
-let times = [{"start": 180, "end": 540}, {"start": 600, "end": 720 }]
+let times = [
+  { start: 180, end: 540 },
+  { start: 600, end: 720 },
+];
 let total_duration = 1200;
 let data = getTimeData(times, total_duration);
