@@ -6,14 +6,9 @@ import axios, { CancelTokenSource } from "axios";
 import { api } from "../services/api";
 import { useState } from "react";
 
-// 1. Improve our ui
-// 1.1 Search bar
-// 1.2 Font size
-// 1.3 Font shadows
-// 1.4 Bg image correct position
-// 1.5 shadow transition betwen bg image and bg color
-// 1.6 character card 
-// 1.7 modal improvements
+// 1.1 show episode timer on top of the bars
+// 1.2 modal improvements so we can see the previous page and do the ui 
+// adjustments acordly
 // 2. Implement our modal with next
 // add a load more button to prevent unecessary api calls for windows resize
 // 3. Find an best id or search for anime then character name or
@@ -32,6 +27,10 @@ import { useState } from "react";
 // useRef for the search
 // when use context
 // use next api to build our api
+// stacked bar
+// dashed/segmented
+// multi color
+// seek bar
 
 export default function Home() {
   const [characters, setCharacters] = useState([]);
