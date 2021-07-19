@@ -60,13 +60,14 @@ export default function Characters() {
                 <div className={styles.bar}>
                   {Object.entries(data).map(([key, value], i) => (
                     <div
+                      data-per={value.percent} 
                       style={{
                         width: `${value.percent}%`,
                         backgroundColor: value.inorout ? "#00c3ff" : "white",
                       }}
-                      className={styles.bars}
+                      className={`${styles.bars} && ${value.inorout ? styles.barsIn : ''}`}
                       key={i}
-                    >{`${value.percent}`}</div>
+                    ></div>
                   ))}
                 </div>
               </div>
