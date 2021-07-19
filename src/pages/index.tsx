@@ -9,6 +9,13 @@ import { api } from "../services/api";
 import Search from "./components/Search";
 import Character from "./components/Character";
 
+type Characters = {
+  id: Number;
+  name: String;
+  lastName: String;
+  icon: String;
+};
+
 export default function Home() {
   let name = "Itachi Uchiha";
   let gaara = "Sabaku no Gaara";
@@ -20,9 +27,8 @@ export default function Home() {
     "Discover when your<br> favorite charachters<br> are on screen!";
   const quantity = "Browse over +100.000 characters";
 
+  const [characters, setCharacters] = useState<Characters[]>([]);
 
-  const [characters, setCharacters] = useState([]);
-  
   return (
     <div className={styles.container}>
       <Head>
@@ -47,13 +53,22 @@ export default function Home() {
             <br /> are on screen!
           </h1>
           <h3>{quantity}</h3>
-          <Search setCharacters={setCharacters}/>
+          <Search setCharacters={setCharacters} />
         </div>
 
         <div className={styles.results}>
-          <Link href="/characters/[character]" as={`/characters/1`}>
-            <a><Character name={name} imageUrl={imageUrl} /></a>
-          </Link>
+          {characters.map((character) => {
+            return (
+              <div>
+                <Link href={`/characters/${character.id}`} as={`/characters/${character.name}`}>
+                  <a>
+                    <Character name={name} imageUrl={imageUrl} />
+                  </a>
+                </Link>
+                {character.name}
+              </div>
+            );
+          })}
           <Character name={gaara} imageUrl={gaaraUrl} />
           <Character name={minato} imageUrl={minatoUrl} />
           <Character name={name} imageUrl={imageUrl} />

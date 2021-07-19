@@ -6,8 +6,14 @@ import axios, { CancelTokenSource } from "axios";
 import { api } from "../../../services/api";
 
 type SearchProps = {
-  setCharacters: Dispatch<SetStateAction<never[]>>;
+  setCharacters: Dispatch<Characters[]>;
   children?: ReactNode;
+};
+type Characters = {
+  id: Number;
+  name: String;
+  lastName: String;
+  icon: String;
 };
 
 export default function Search({ setCharacters, children }: SearchProps) {
@@ -15,23 +21,23 @@ export default function Search({ setCharacters, children }: SearchProps) {
   const handleSearch = async (e: { target: { value: any } }) => {
     const query = e.target.value;
 
-    if (query == 0) {
-      setCharacters([]);
-    }
-
     if (typeof cancelToken != typeof undefined) {
       cancelToken.cancel("Operation canceled due to new request.");
     }
     cancelToken = axios.CancelToken.source();
-
-    try {
-      const res = await api.get(`characters?q=${query}`, {
-        cancelToken: cancelToken.token,
-      });
-      console.log(res.data);
-      setCharacters(res.data);
-    } catch (error) {
-      console.log(error);
+    if (query.length < 3) {
+      setCharacters([]);
+    } else {
+      try {
+        const res = await api.get(`characters?q=${query}`, {
+          cancelToken: cancelToken.token,
+        });
+        console.log("query: ", query);
+        console.log(res.data);
+        setCharacters(res.data);
+      } catch (error) {
+        console.log(error);
+      }
     }
   };
 

@@ -14,7 +14,6 @@ import getTimeData from "../../Utils/getTimeData";
 // to 8:40 the character appears, so we create a new bar and to 8:40
 // to the final he doesnt appears anymore, so we create a new bar to
 // the end of the time
-// 3. apexchartsjs
 Modal.setAppElement("#__next");
 
 export default function Characters() {
