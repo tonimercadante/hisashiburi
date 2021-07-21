@@ -60,7 +60,7 @@ export default function Home() {
           {characters.map((character) => {
             return (
               <div>
-                <Link href={`/characters/${character.id}`} as={`/characters/${character.id}`}>
+                <Link href={`/characters/${character.name}`} as={`/characters/${character.id}`}>
                   <a>
                     <Character name={character.name} icon={character.icon} />
                   </a>

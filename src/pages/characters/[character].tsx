@@ -6,7 +6,7 @@ import Image from "next/image";
 import getTimeData from "../../Utils/getTimeData";
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { api } from "../../services/api";
-import { ParsedUrlQuery } from 'querystring'
+import { ParsedUrlQuery } from 'querystring';
 // Possible approaches to the bar thing:
 // 1. create a lot of bar and give them the absolute position and
 // then position then the way i need so i need to have a way to get
@@ -19,16 +19,20 @@ import { ParsedUrlQuery } from 'querystring'
 // the end of the time
 Modal.setAppElement("#__next");
 
-type CharacterProps = {
+type Character = {
+  id: number;
   name: string;
   icon: string;
 };
 
+type CharacterProps = {
+  characterData: Character;
+}
 
-export default function Characters() {
+export default function Characters({characterData}: CharacterProps) {
   const router = useRouter();
   console.log("router: ", router.query);
-
+  console.log("Props: ", characterData)
   useEffect(() => {
     router.prefetch("/");
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -82,7 +86,6 @@ export default function Characters() {
             </div>
           </div>
         </div>
-
         {/* <Article id={articleId} pathname={router.pathname} /> */}
       </Modal>
     </>
@@ -105,9 +108,18 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
   const { character }  = ctx.params as IParams;
   console.log("KRL )_(_)QW*(@!*()#*()@!*()@#!*)(@#*(", character)
   const { data } = await api.get(`characters/${character}`);
-  
+  console.log("THIS IS MYDATA : +++++ ", data)
+
+  const characterData = {
+    id: data.id,
+    name: data.name,
+    icon: data.icon,
+  }
+
   return {
-    props: {data},
+    props: {
+      characterData,
+    },
   };
 } 
 
