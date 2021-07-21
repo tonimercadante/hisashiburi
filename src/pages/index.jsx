@@ -5,11 +5,7 @@ import Link from "next/link";
 import axios, { CancelTokenSource } from "axios";
 import { api } from "../services/api";
 import { useState } from "react";
-
-// 1.1 show episode timer on top of the bars
-// 1.2 modal improvements so we can see the previous page and do the ui 
-// adjustments acordly
-// 2. Implement our modal with next
+// 1 modal 
 // add a load more button to prevent unecessary api calls for windows resize
 // 3. Find an best id or search for anime then character name or
 // id and name but should we do this because would be easy to anyone predic
@@ -31,6 +27,7 @@ import { useState } from "react";
 // dashed/segmented
 // multi color
 // seek bar
+// useswr
 
 export default function Home() {
   const [characters, setCharacters] = useState([]);
@@ -75,7 +72,7 @@ export default function Home() {
               <div className={styles.characterCard} key={character.id}>
                 <Link href={{
                   pathname: '/characters/[character]',
-                  query: { character: character.id },
+                  query: { character: character.name },
                 }}>
                   <a>
                   <Image

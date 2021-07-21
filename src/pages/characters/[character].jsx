@@ -87,8 +87,8 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(ctx) {
   const { character } = ctx.params;
-  console.log("KRLLLLLL" + ctx.id);
-  const { data } = await api.get(`characters/${character}`);
+  const { data } = await api.get(`characters/?name=${character}`);
+  // console.log("KRLLLLLL" + ctx.id);
 
   return {
     props: { data },
