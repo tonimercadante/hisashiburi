@@ -4,19 +4,19 @@ import { ReactNode } from "react";
 
 type CharacterProps = {
   name: string;
-  imageUrl: string;
+  icon: string;
   children?: ReactNode;
 };
 
 export default function Character({
   name,
-  imageUrl,
+  icon,
   children,
 }: CharacterProps) {
   return (
     <div className={styles.characterCard}>
-      <p className={styles.characterText}>{name}</p>
-      <Image src={imageUrl} width="200" height="200" layout="responsive" />
+      <p className={styles.characterText}>{`${name}`}</p>
+      <Image src={icon} width="200" height="200" layout="responsive" />
     </div>
   );
 }

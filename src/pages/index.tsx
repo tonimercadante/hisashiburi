@@ -10,17 +10,17 @@ import Search from "./components/Search";
 import Character from "./components/Character";
 
 type Characters = {
-  id: Number;
-  name: String;
-  lastName: String;
-  icon: String;
+  id: number;
+  name: string;
+  lastName: string;
+  icon: string;
 };
 
 export default function Home() {
   let name = "Itachi Uchiha";
   let gaara = "Sabaku no Gaara";
   let minato = "Minato Namikaze";
-  let imageUrl = "/images/itachi.jpg";
+  let icon = "/images/itachi.jpg";
   let gaaraUrl = "/images/gaara.jpg";
   let minatoUrl = "/images/minato.jpg";
   const description =
@@ -60,26 +60,26 @@ export default function Home() {
           {characters.map((character) => {
             return (
               <div>
-                <Link href={`/characters/${character.id}`} as={`/characters/${character.name}`}>
+                <Link href={`/characters/${character.id}`} as={`/characters/${character.id}`}>
                   <a>
-                    <Character name={name} imageUrl={imageUrl} />
+                    <Character name={character.name} icon={character.icon} />
                   </a>
                 </Link>
                 {character.name}
               </div>
             );
           })}
-          <Character name={gaara} imageUrl={gaaraUrl} />
-          <Character name={minato} imageUrl={minatoUrl} />
-          <Character name={name} imageUrl={imageUrl} />
-          <Character name={gaara} imageUrl={gaaraUrl} />
-          <Character name={minato} imageUrl={minatoUrl} />
-          <Character name={name} imageUrl={imageUrl} />
-          <Character name={gaara} imageUrl={gaaraUrl} />
-          <Character name={minato} imageUrl={minatoUrl} />
-          <Character name={name} imageUrl={imageUrl} />
-          <Character name={gaara} imageUrl={gaaraUrl} />
-          <Character name={minato} imageUrl={minatoUrl} />
+          {/* <Character name={gaara} icon={gaaraUrl} />
+          <Character name={minato} icon={minatoUrl} />
+          <Character name={name} icon={icon} />
+          <Character name={gaara} icon={gaaraUrl} />
+          <Character name={minato} icon={minatoUrl} />
+          <Character name={name} icon={icon} />
+          <Character name={gaara} icon={gaaraUrl} />
+          <Character name={minato} icon={minatoUrl} />
+          <Character name={name} icon={icon} />
+          <Character name={gaara} icon={gaaraUrl} />
+          <Character name={minato} icon={minatoUrl} /> */}
         </div>
       </main>
 

@@ -10,10 +10,10 @@ type SearchProps = {
   children?: ReactNode;
 };
 type Characters = {
-  id: Number;
-  name: String;
-  lastName: String;
-  icon: String;
+  id: number;
+  name: string;
+  lastName: string;
+  icon: string;
 };
 
 export default function Search({ setCharacters, children }: SearchProps) {

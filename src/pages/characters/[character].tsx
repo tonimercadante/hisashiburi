@@ -4,6 +4,9 @@ import { useRouter } from "next/router";
 import styles from "./styles.module.scss";
 import Image from "next/image";
 import getTimeData from "../../Utils/getTimeData";
+import { GetStaticPaths, GetStaticProps } from 'next';
+import { api } from "../../services/api";
+import { ParsedUrlQuery } from 'querystring'
 // Possible approaches to the bar thing:
 // 1. create a lot of bar and give them the absolute position and
 // then position then the way i need so i need to have a way to get
@@ -16,9 +19,15 @@ import getTimeData from "../../Utils/getTimeData";
 // the end of the time
 Modal.setAppElement("#__next");
 
+type CharacterProps = {
+  name: string;
+  icon: string;
+};
+
+
 export default function Characters() {
   const router = useRouter();
-  console.log(router.query);
+  console.log("router: ", router.query);
 
   useEffect(() => {
     router.prefetch("/");
@@ -57,7 +66,7 @@ export default function Characters() {
               </div>
               <div className={styles.episodeTimeBar}>
                 <div className={styles.bar}>
-                  {Object.entries(data).map(([key, value], i) => (
+                  {Object.entries(datad).map(([key, value], i) => (
                     <div
                       data-per={value.percent} 
                       style={{
@@ -79,9 +88,32 @@ export default function Characters() {
     </>
   );
 }
+
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  return {
+    paths: [],
+    fallback: "blocking"
+  }
+}
+
+interface IParams extends ParsedUrlQuery {
+  slug: string
+}
+
+export const getStaticProps: GetStaticProps = async (ctx) => {
+  const { character }  = ctx.params as IParams;
+  console.log("KRL )_(_)QW*(@!*()#*()@!*()@#!*)(@#*(", character)
+  const { data } = await api.get(`characters/${character}`);
+  
+  return {
+    props: {data},
+  };
+} 
+
 let times = [
   { start: 180, end: 540 },
   { start: 600, end: 720 },
 ];
 let total_duration = 1200;
-let data = getTimeData(times, total_duration);
+let datad = getTimeData(times, total_duration);
