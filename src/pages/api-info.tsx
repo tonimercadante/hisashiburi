@@ -1,7 +1,7 @@
 export default function ApiInfo() {
   return (
     <div>
-      <h1>ApiInfo</h1>
+      <h1>Api - Info</h1>
     </div>
   );
 }
