@@ -33,7 +33,7 @@
 //     i++;
 // }
 
-// let percent = Math.round(times[0]['start'] / total_duration * 100) + ' %';
+// let percent = Math.floor(times[0]['start'] / total_duration * 100) + ' %';
 // total = timers.reduce((a,b) => a + b);
 // console.log("Data: ", data)
 function getParsedTimes(times) {
@@ -59,18 +59,18 @@ export default function getTimeData(times, total_duration) {
     let i = 0;
     while (i < times.length) {
         if (times[i]['start'] != 0 && i == 0) {
-            data.push({percent: Math.round((times[i]['start'] - 0) / total_duration * 100), inorout: false})
+            data.push({percent: Math.floor((times[i]['start'] - 0) / total_duration * 100), inorout: false})
         }
-        data.push({percent: Math.round((times[i]['end'] - times[i]['start']) / total_duration * 100), inorout: true})
+        data.push({percent: Math.floor((times[i]['end'] - times[i]['start']) / total_duration * 100), inorout: true})
         if (i != times.length -1) {
-            data.push({percent: Math.round((times[i+1]['start'] - times[i]['end']) / total_duration * 100), inorout: false})
+            data.push({percent: Math.floor((times[i+1]['start'] - times[i]['end']) / total_duration * 100), inorout: false})
         }
     
         else {
             if (times[i]['end'] == total_duration) {
                 break
             }
-            data.push({percent: Math.round((total_duration - times[i]['end']) / total_duration * 100),inorout: false})
+            data.push({percent: Math.floor((total_duration - times[i]['end']) / total_duration * 100),inorout: false})
         }
         i++;
     }

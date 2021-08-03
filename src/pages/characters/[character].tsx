@@ -141,7 +141,7 @@ export default function Characters({ characterData }: CharacterProps) {
                         backgroundColor: value.inorout ? "#00c3ff" : "white",
                       }}
                       className={`${styles.bars} && ${
-                        value.inorout ? styles.barsIn : ""
+                        value.inorout ? styles.barsIn : '' 
                       }`}
                       key={i}
                     ></div>
@@ -181,7 +181,6 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
   data.episodes.forEach(function(newdata: { parsedEp: { percent: number; inorout: boolean; }[]; apparitionTime: string; duration: string; }) {
     newdata.parsedEp = getTimeData(newdata.apparitionTime, newdata.duration);
   })
-  console.log("FOI?? " , data.episodes)
   const characterData = {
     id: data.id,
     name: data.name,

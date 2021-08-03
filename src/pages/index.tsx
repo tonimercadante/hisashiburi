@@ -1,11 +1,11 @@
 import Head from "next/head";
 import styles from "../styles/home.module.scss";
 
-// type the props of the getStaticProps rocket seat
-// pass the data in two ways, the percent and the time like 00:00:00
-// change the ui like in figma
+// improve our ui
+
+// type the props of the getStaticProps rocket seat done
+// pass the data in two ways, the percent and the time like 00:00:00 done
 // layout change homepage component for api, bot and about
-// add layout or head rocketseat way for our nav
 // fuzzy search
 // deploy
 
