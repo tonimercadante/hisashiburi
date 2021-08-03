@@ -190,20 +190,7 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
     episodes: data.episodes,
 
   };
-  // let episodes = data.episodes.map(episode => {
-  //   return{
-  //     totalDuration: episode.duration,
-  //     ti: episode.apparitionTime
-  //   }
-  // }
-  // )
-  // let durations = episodes.map(episode => {
-  //   return{
-  //     tot: episode.totalDuration
-  //   }
-  // })
   
-  // console.log("TOT: ", durations)
   return {
     props: {
       characterData,
