@@ -1,34 +1,16 @@
 import Head from "next/head";
-import Image from "next/image";
-import Link from "next/link";
-import { useState } from "react";
 import styles from "../styles/home.module.scss";
-import { useRouter } from "next/router";
-
-//Components
-import Search from "./components/Search";
-import Character from "./components/Character";
-import HomePage from "./components/HomePage";
 
 // type the props of the getStaticProps rocket seat
 // pass the data in two ways, the percent and the time like 00:00:00
 // change the ui like in figma
+// layout change homepage component for api, bot and about
 // add layout or head rocketseat way for our nav
 // fuzzy search
 // deploy
 
-type Characters = {
-  id: number;
-  name: string;
-  lastName: string;
-  icon: string;
-};
-
 
 export default function Home() {
-  const description =
-  "Discover when your<br> favorite charachters<br> are on screen!";
-  const quantity = "Browse over +100.000 characters";
   
   
   return (
@@ -43,6 +25,16 @@ export default function Home() {
     </div>
   );
 }
+
+// type Characters = {
+  //   id: number;
+  //   name: string;
+  //   lastName: string;
+  //   icon: string;
+  // };
+  // const description =
+  // "Discover when your<br> favorite charachters<br> are on screen!";
+  // const quantity = "Browse over +100.000 characters";
 {/* <HomePage /> */}
 // const [characters, setCharacters] = useState<Characters[]>([]);
 // const router = useRouter();

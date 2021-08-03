@@ -4,9 +4,9 @@ import { useRouter } from "next/router";
 import styles from "./styles.module.scss";
 import Image from "next/image";
 import getTimeData from "../../Utils/getTimeData";
-import { GetStaticPaths, GetStaticProps } from 'next';
+import { GetStaticPaths, GetStaticProps } from "next";
 import { api } from "../../services/api";
-import { ParsedUrlQuery } from 'querystring';
+import { ParsedUrlQuery } from "querystring";
 // Possible approaches to the bar thing:
 // 1. create a lot of bar and give them the absolute position and
 // then position then the way i need so i need to have a way to get
@@ -22,21 +22,51 @@ Modal.setAppElement("#__next");
 type Character = {
   id: number;
   name: string;
+  lastName: string;
   icon: string;
+  cover: string;
+  episodes: Episodes[];
 };
+type Episodes = {
+  id: number;
+  title: string;
+  season: number;
+  episode: number;
+  arch: string;
+  duration: string;
+  apparitionTime: ApparitionTime[];
+  parsedTime: ParsedTime[];
+  parsedEp: parsedEp[];
+};
+type parsedEp = {
+  percent: number;
+  inorout: boolean;
+}
+
+type ParsedTime = {
+  start: number;
+  end: number;
+
+}
+
+type ApparitionTime = {
+  start: string;
+  end: string;
+}
 
 type CharacterProps = {
   characterData: Character;
-}
+};
 
-export default function Characters({characterData}: CharacterProps) {
+export default function Characters({ characterData }: CharacterProps) {
   const router = useRouter();
-  console.log("router: ", router.query);
-  console.log("Props: ", characterData)
+  // console.log("router: ", router.query);
+  // console.log("Props: ", characterData);
   useEffect(() => {
     router.prefetch("/");
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
   return (
     <>
       <Modal
@@ -49,15 +79,48 @@ export default function Characters({characterData}: CharacterProps) {
         <div className={styles.characterModal}>
           <div className={styles.characterBanner}>
             <Image src="/images/itachi_cover.jpg" width="1000" height="200" />
-            <h2>Itachi Uchiha</h2>
+            <h2>{`${characterData.name} ${characterData.lastName}`}</h2>
           </div>
 
           <div className={styles.episodes}>
             <h2>Naruto</h2>
+            <p></p>
             <div className={styles.titles}>
               <p className={styles.episodesText}>Episodes (7)</p>
               <p className={styles.episodesText}>Season 1</p>
             </div>
+
+            {characterData.episodes.map((episode)=> (
+              <div key={episode.id} className={styles.episode}>
+                <div className={styles.episodeDetails}>
+                  <div className={styles.episodeInfo}>
+                    <p>{episode.episode}</p>
+                    <p>{episode.title}</p>
+                  </div>
+                  <div className={styles.episodeMore}>
+                    <p>+</p>
+                  </div>
+                </div>
+                <div className={styles.episodeTimeBar}>
+                  <div className={styles.bar}>
+                  {Object.entries(episode.parsedEp).map(([key, value], i) => (
+                    <div
+                      data-per={value.percent}
+                      style={{
+                        width: `${value.percent}%`,
+                        backgroundColor: value.inorout ? "#00c3ff" : "white",
+                      }}
+                      className={`${styles.bars} && ${
+                        value.inorout ? styles.barsIn : ""
+                      }`}
+                      key={i}
+                    ></div>
+                  ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+
             <div className={styles.episode}>
               <div className={styles.episodeDetails}>
                 <div className={styles.episodeInfo}>
@@ -70,62 +133,88 @@ export default function Characters({characterData}: CharacterProps) {
               </div>
               <div className={styles.episodeTimeBar}>
                 <div className={styles.bar}>
-                  {Object.entries(datad).map(([key, value], i) => (
+                  {Object.entries(dataddd).map(([key, value], i) => (
                     <div
-                      data-per={value.percent} 
+                      data-per={value.percent}
                       style={{
                         width: `${value.percent}%`,
                         backgroundColor: value.inorout ? "#00c3ff" : "white",
                       }}
-                      className={`${styles.bars} && ${value.inorout ? styles.barsIn : ''}`}
+                      className={`${styles.bars} && ${
+                        value.inorout ? styles.barsIn : ""
+                      }`}
                       key={i}
                     ></div>
                   ))}
                 </div>
               </div>
             </div>
+           
           </div>
+          
         </div>
-        {/* <Article id={articleId} pathname={router.pathname} /> */}
       </Modal>
     </>
   );
 }
 
-
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
     paths: [],
-    fallback: "blocking"
-  }
-}
+    fallback: "blocking",
+  };
+};
 
 interface IParams extends ParsedUrlQuery {
-  slug: string
+  slug: string;
 }
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
-  const { character }  = ctx.params as IParams;
-  console.log("KRL )_(_)QW*(@!*()#*()@!*()@#!*)(@#*(", character)
+  const { character } = ctx.params as IParams;
   const { data } = await api.get(`characters/${character}`);
-  console.log("THIS IS MYDATA : +++++ ", data)
+  
+  // console.log("KRL )_(_)QW*(@!*()#*()@!*()@#!*)(@#*(", character);
+  // console.log("THIS IS MYDATA : +++++ ", data);
 
+
+  console.log("test consolando: 1 ", data.episodes)
+  data.episodes.forEach(function(newdata: { parsedEp: { percent: number; inorout: boolean; }[]; apparitionTime: string; duration: string; }) {
+    newdata.parsedEp = getTimeData(newdata.apparitionTime, newdata.duration);
+  })
+  console.log("FOI?? " , data.episodes)
   const characterData = {
     id: data.id,
     name: data.name,
+    lastName: data.lastName,
     icon: data.icon,
-  }
+    episodes: data.episodes,
 
+  };
+  // let episodes = data.episodes.map(episode => {
+  //   return{
+  //     totalDuration: episode.duration,
+  //     ti: episode.apparitionTime
+  //   }
+  // }
+  // )
+  // let durations = episodes.map(episode => {
+  //   return{
+  //     tot: episode.totalDuration
+  //   }
+  // })
+  
+  // console.log("TOT: ", durations)
   return {
     props: {
       characterData,
     },
   };
-} 
+};
 
-let times = [
-  { start: 180, end: 540 },
-  { start: 600, end: 720 },
+let a = [
+  { start: "3:00", end: "9:00" },
+  { start: "10:00", end: "12:00" },
 ];
-let total_duration = 1200;
-let datad = getTimeData(times, total_duration);
+console.log("times from the working one", a)
+let total_duration = "20:00";
+let dataddd = getTimeData(a, total_duration);

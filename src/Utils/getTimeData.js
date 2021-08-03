@@ -36,9 +36,24 @@
 // let percent = Math.round(times[0]['start'] / total_duration * 100) + ' %';
 // total = timers.reduce((a,b) => a + b);
 // console.log("Data: ", data)
+function getParsedTimes(times) {
+
+    times.forEach(function(time) {
+        time.start = +(time.start.split(':').reduce((acc,time) => (60 * acc) + +time))
+        time.end = +(time.end.split(':').reduce((acc,time) => (60 * acc) + +time))
+    })
+    return times;
+}
+
+function getParsedDuration(total_duration) {
+    return total_duration = +(total_duration.split(':').reduce((acc,time) => (60 * acc) + +time))
+}
 
 export default function getTimeData(times, total_duration) {
     
+    getParsedTimes(times)
+    total_duration = getParsedDuration(total_duration)
+ 
 
     let data = []
     let i = 0;

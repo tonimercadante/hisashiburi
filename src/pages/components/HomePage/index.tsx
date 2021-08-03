@@ -52,28 +52,15 @@ export default function HomePage() {
                     <Character name={char.name} icon={char.icon} />
                   </a>
                 </Link>
-                {char.name}
               </div>
             );
           })}
-          {/* <Character name={gaara} icon={gaaraUrl} />
-          <Character name={minato} icon={minatoUrl} />
-          <Character name={name} icon={icon} />
-          <Character name={gaara} icon={gaaraUrl} />
-          <Character name={minato} icon={minatoUrl} />
-          <Character name={name} icon={icon} />
-          <Character name={gaara} icon={gaaraUrl} />
-          <Character name={minato} icon={minatoUrl} />
-          <Character name={name} icon={icon} />
-          <Character name={gaara} icon={gaaraUrl} />
-          <Character name={minato} icon={minatoUrl} /> */}
+          
         </div>
       </main>
 
       <footer className={styles.footer}></footer>
-      {/* <Modal isOpen={!!router.query.character}>
-        <h1>hi</h1>
-      </Modal> */}
+     
     </>
   );
 }
