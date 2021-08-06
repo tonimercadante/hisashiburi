@@ -1,26 +1,25 @@
 .search {
-  position: absolute;
-  // top: 35vh;
   display: flex;
   flex-direction: column;
-  // background-color: aliceblue;
-  height: 52.5vh;
   width: 70%;
   min-width: 500px;
   max-width: 700px;
   pointer-events: none;
-  z-index: 9999;
+  z-index: 1;
 
   justify-content: flex-end;
   input {
     pointer-events: all;
     border-radius: 0.8rem;
     border: none;
-    padding: 2rem 2rem;
-    font-size: 2rem;
+    padding: 1.4rem 2rem;
+    font-size: 1.6rem ;
     width: 100%;
     &:focus {
-      outline: solid 2px var(--input-color);
+      outline: none;
+    }
+    &:hover {
+      box-shadow: 0 0 6pt 2pt rgba(214, 214, 214, 0.712);
     }
   }
 }
@@ -31,7 +30,8 @@
   cursor: pointer;
   position: absolute;
   right: 2rem;
-  color: var(--input-color);
+  color: rgb(146, 146, 146);
   width: 30px;
-  top: 1.9rem;
+  top: 50%;
+  transform: translateY(-50%);
 }

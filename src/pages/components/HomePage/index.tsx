@@ -30,9 +30,8 @@ export default function HomePage() {
             quality="100"
           />
           <h1>
-            Discover when your
-            <br /> favorite characters
-            <br /> are on screen!
+            Search when anime
+            <br />characters appears!
           </h1>
           <h3>{quantity}</h3>
           <Search setCharacters={setCharacters} />

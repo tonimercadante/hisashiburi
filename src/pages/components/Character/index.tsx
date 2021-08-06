@@ -16,7 +16,7 @@ export default function Character({
   return (
     <div className={styles.characterCard}>
       <p className={styles.characterText}>{`${name}`}</p>
-      <Image src={icon} width="200" height="200" layout="responsive" />
+      <Image src={icon} width="200" height="200" />
     </div>
   );
 }

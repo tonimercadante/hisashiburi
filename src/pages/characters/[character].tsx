@@ -70,6 +70,23 @@ export default function Characters({ characterData }: CharacterProps) {
   return (
     <>
       <Modal
+      style={{
+        overlay: {
+          zIndex: 3,
+          width: '100%',
+        },
+        content:{
+        width: '70%',
+        margin: 'auto',
+        left: 0,
+        right: 0,
+        padding:0,
+        bottom:0,
+        backgroundColor: '#131313',
+        border: 0,
+        borderRadius: '2rem 2rem 0 0 ',
+
+      }}}
         isOpen={true} // The modal should always be shown on page load, it is the 'page'
         onRequestClose={() => router.push("/")}
         contentLabel="Post modal"
@@ -78,7 +95,9 @@ export default function Characters({ characterData }: CharacterProps) {
       >
         <div className={styles.characterModal}>
           <div className={styles.characterBanner}>
-            <Image src="/images/itachi_cover.jpg" width="1000" height="200" />
+            <Image src={characterData.cover} layout="fill"
+            objectFit="cover"
+            quality="100"/>
             <h2>{`${characterData.name} ${characterData.lastName}`}</h2>
           </div>
 
@@ -87,7 +106,6 @@ export default function Characters({ characterData }: CharacterProps) {
             <p></p>
             <div className={styles.titles}>
               <p className={styles.episodesText}>Episodes (7)</p>
-              <p className={styles.episodesText}>Season 1</p>
             </div>
 
             {characterData.episodes.map((episode)=> (
@@ -114,41 +132,14 @@ export default function Characters({ characterData }: CharacterProps) {
                         value.inorout ? styles.barsIn : ""
                       }`}
                       key={i}
-                    ></div>
+                    >                    {console.log(episode.parsedEp)}
+                    </div>
                   ))}
                   </div>
                 </div>
               </div>
             ))}
 
-            <div className={styles.episode}>
-              <div className={styles.episodeDetails}>
-                <div className={styles.episodeInfo}>
-                  <p>47.</p>
-                  <p>Itachi-The rogue ninja</p>
-                </div>
-                <div className={styles.episodeMore}>
-                  <p>+</p>
-                </div>
-              </div>
-              <div className={styles.episodeTimeBar}>
-                <div className={styles.bar}>
-                  {Object.entries(dataddd).map(([key, value], i) => (
-                    <div
-                      data-per={value.percent}
-                      style={{
-                        width: `${value.percent}%`,
-                        backgroundColor: value.inorout ? "#00c3ff" : "white",
-                      }}
-                      className={`${styles.bars} && ${
-                        value.inorout ? styles.barsIn : '' 
-                      }`}
-                      key={i}
-                    ></div>
-                  ))}
-                </div>
-              </div>
-            </div>
            
           </div>
           
@@ -175,8 +166,8 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
   
   // console.log("KRL )_(_)QW*(@!*()#*()@!*()@#!*)(@#*(", character);
   // console.log("THIS IS MYDATA : +++++ ", data);
-
-
+  
+  
   console.log("test consolando: 1 ", data.episodes)
   data.episodes.forEach(function(newdata: { parsedEp: { percent: number; inorout: boolean; }[]; apparitionTime: string; duration: string; }) {
     newdata.parsedEp = getTimeData(newdata.apparitionTime, newdata.duration);
@@ -186,8 +177,9 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
     name: data.name,
     lastName: data.lastName,
     icon: data.icon,
+    cover: data.cover,
     episodes: data.episodes,
-
+    
   };
   
   return {
@@ -197,10 +189,39 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
   };
 };
 
-let a = [
-  { start: "3:00", end: "9:00" },
-  { start: "10:00", end: "12:00" },
-];
-console.log("times from the working one", a)
-let total_duration = "20:00";
-let dataddd = getTimeData(a, total_duration);
+// let a = [
+//   { start: "3:00", end: "9:00" },
+//   { start: "10:00", end: "12:00" },
+// ];
+// console.log("times from the working one", a)
+// let total_duration = "20:00";
+// let dataddd = getTimeData(a, total_duration);
+
+{/* <div className={styles.episode}>
+  <div className={styles.episodeDetails}>
+    <div className={styles.episodeInfo}>
+      <p>47.</p>
+      <p>Itachi-The rogue ninja</p>
+    </div>
+    <div className={styles.episodeMore}>
+      <p>+</p>
+    </div>
+  </div>
+  <div className={styles.episodeTimeBar}>
+    <div className={styles.bar}>
+      {Object.entries(dataddd).map(([key, value], i) => (
+        <div
+          data-per={value.percent}
+          style={{
+            width: `${value.percent}%`,
+            backgroundColor: value.inorout ? "#00c3ff" : "white",
+          }}
+          className={`${styles.bars} && ${
+            value.inorout ? styles.barsIn : '' 
+          }`}
+          key={i}
+        ></div>
+      ))}
+    </div>
+  </div>
+</div> */}

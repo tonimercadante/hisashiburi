@@ -48,7 +48,8 @@ export default function Search({ setCharacters, children }: SearchProps) {
         <FontAwesomeIcon
           icon={faSearch}
           className={styles.searchIcon}
-          size="3x"
+          size="2x"
+          
         />
       </div>
     </div>
