@@ -9,10 +9,9 @@ html {
 }
 
 body {
-  background-color: var(--main-black);
+  background-color: var(--background-color);
   font-family: Roboto;
-  color:  var(--hero-text-color) ;
-  ;
+  color:  var(--hero-text-color);
 }
 h1 {
   font-size: 3.2rem;
@@ -25,6 +24,8 @@ h3 {
   font-weight: 400;
 }
 :root {
+  --background-color: #060e18;
+  --background-contrast: #0b1a2c;
   --main-black: #303030;
   --hero-text-color: rgb(240, 240, 240);
   --input-color: #e4d8c0;

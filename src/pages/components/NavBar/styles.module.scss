@@ -1,5 +1,5 @@
 .navBar {
-    // background-color: aqua;
+    background-color: var(--background-color);
     width: 100%;
     height: 8vh;
     display: flex;
@@ -22,16 +22,19 @@
         list-style: none;
         flex-direction: row;
         justify-content: space-around;
-        
+        font-size: 1.6rem;
+        font-weight: 600;
+
         li {
             display: flex;
-            flex: 1;
             justify-content: flex-end;
-            cursor: pointer;
-            text-decoration: none;
 
             a {
+                color:azure;
+                text-decoration: none;
+
                 &:hover {
+                    padding: 0.4rem;
                     background-color: skyblue;
                 }
             }

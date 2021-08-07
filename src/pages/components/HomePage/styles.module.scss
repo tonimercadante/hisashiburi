@@ -1,5 +1,5 @@
 .home {
-    background-color: var(--main-black);
+    background-color: var(--background-color);
     color: #FFF;
   }
   
@@ -12,18 +12,17 @@
     justify-content: space-around;
     position: relative;
     text-align: center;
-    // &::after {
-    //   -webkit-box-shadow: inset 0px -30px 20px -10px var(--main-black);
-    //   -moz-box-shadow: inset 0px -30px 20px -10px var(--main-black);
-    //   box-shadow: inset 0px -30px 20px -10px var(--main-black);
-    //   content: "";
-    //   display: block;
-    //   height: 100%;
-    //   position: absolute;
-    //   top: 0;
-    //   width: 100%;
-    // }
-
+    &::after {
+      -webkit-box-shadow: inset 0px -30px 20px -10px var(--main-black);
+      -moz-box-shadow: inset 0px -30px 20px -10px var(--main-black);
+      box-shadow: inset 0px -30px 20px -10px var(--background-color);
+      content: "";
+      display: block;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
   
     h1,
     h3 {
@@ -40,7 +39,7 @@
   
   .results {
     justify-content: center;
-    margin: 10rem 10rem;
+    margin: 6rem 10rem;
     display: grid;
     gap: 10rem 10rem;
     grid-template-columns: repeat(auto-fit, minmax(20rem, 200px));
