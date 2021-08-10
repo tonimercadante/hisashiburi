@@ -30,7 +30,7 @@
   cursor: pointer;
   position: absolute;
   right: 2rem;
-  color: rgb(146, 146, 146);
+  color: var(--background-contrast);
   width: 30px;
   top: 50%;
   transform: translateY(-50%);

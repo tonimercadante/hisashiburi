@@ -9,6 +9,7 @@ import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import getTimeData from "../../Utils/getTimeData";
 import Image from "next/image";
 import styles from "./styles.module.scss";
+import { parseBody } from "next/dist/next-server/server/api-utils";
 
 /* Possible approaches to the bar thing:
 1. create a lot of bar and give them the absolute position and
@@ -45,6 +46,7 @@ type Episodes = {
 type parsedEp = {
   percent: number;
   inorout: boolean;
+  time: string;
 };
 
 type ParsedTime = {
@@ -116,11 +118,10 @@ export default function Characters({ characterData }: CharacterProps) {
                   <p>+</p>
                 </div>
               </div>
-              <div className={styles.episodeTimeBar}>
                 <div className={styles.bar}>
                   {Object.entries(episode.parsedEp).map(([key, value], i) => (
                     <div
-                      data-per={value.percent}
+                      data-per={value.time}
                       style={{
                         width: `${value.percent}%`,
                         backgroundColor: value.inorout ? "#00c3ff" : "white",
@@ -130,12 +131,10 @@ export default function Characters({ characterData }: CharacterProps) {
                       }`}
                       key={i}
                     >
-                      {" "}
-                      {console.log(episode.parsedEp)}
+                     
                     </div>
                   ))}
                 </div>
-              </div>
             </div>
           ))}
         </div>
@@ -166,7 +165,9 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
     duration: string;
   }) {
     newdata.parsedEp = getTimeData(newdata.apparitionTime, newdata.duration);
+    // console.log(newdata);
   });
+
   const characterData = {
     id: data.id,
     name: data.name,
