@@ -8,11 +8,7 @@ type CharacterProps = {
   children?: ReactNode;
 };
 
-export default function Character({
-  name,
-  icon,
-  children,
-}: CharacterProps) {
+export default function Character({ name, icon, children }: CharacterProps) {
   return (
     <div className={styles.characterCard}>
       <p className={styles.characterText}>{`${name}`}</p>

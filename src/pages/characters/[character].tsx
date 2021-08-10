@@ -83,66 +83,62 @@ export default function Characters({ characterData }: CharacterProps) {
         isOpen={true} // The modal should always be shown on page load, it is the 'page'
         onRequestClose={closeModal}
         contentLabel="Post modal"
-        preventScroll={true}   
+        preventScroll={true}
       >
         {/* <div className={styles.modalDetail}> */}
-          <div className={styles.characterBanner}>
-            <Image
-              src={characterData.cover}
-              layout="fill"
-              objectFit="cover"
-              quality="100"
-            />
-            <div className={styles.closeIcon} onClick={closeModal}>
-
-             <FontAwesomeIcon
-            icon={faTimes}
-            className={styles.icon}
-            size="2x"
-        /></div>
+        <div className={styles.characterBanner}>
+          <Image
+            src={characterData.cover}
+            layout="fill"
+            objectFit="cover"
+            quality="100"
+          />
+          <div className={styles.closeIcon} onClick={closeModal}>
+            <FontAwesomeIcon icon={faTimes} className={styles.icon} size="2x" />
           </div>
+        </div>
 
-          <div className={styles.characterInfo}>
-            <h2>{`${characterData.name} ${characterData.lastName}`}</h2>
-            <p>Naruto Shippuden</p>
-          </div>
-          <hr />
-          <div className={styles.episodes}>
-            <h4>Episodes: </h4>
-            {characterData.episodes.map((episode) => (
-              <div key={episode.id} className={styles.episode}>
-                <div className={styles.episodeDetails}>
-                  <div className={styles.episodeInfo}>
-                    <p>{episode.number}.</p>
-                    <p>{episode.title}</p>
-                  </div>
-                  <div className={styles.episodeMore}>
-                    <p>+</p>
-                  </div>
+        <div className={styles.characterInfo}>
+          <h2>{`${characterData.name} ${characterData.lastName}`}</h2>
+          <p>Naruto Shippuden</p>
+        </div>
+        <hr />
+        <div className={styles.episodes}>
+          <h4>Episodes: </h4>
+          {characterData.episodes.map((episode) => (
+            <div key={episode.id} className={styles.episode}>
+              <div className={styles.episodeDetails}>
+                <div className={styles.episodeInfo}>
+                  <p>{episode.number}.</p>
+                  <p>{episode.title}</p>
                 </div>
-                <div className={styles.episodeTimeBar}>
-                  <div className={styles.bar}>
-                    {Object.entries(episode.parsedEp).map(([key, value], i) => (
-                      <div
-                        data-per={value.percent}
-                        style={{
-                          width: `${value.percent}%`,
-                          backgroundColor: value.inorout ? "#00c3ff" : "white",
-                        }}
-                        className={`${styles.bars} && ${
-                          value.inorout ? styles.barsIn : ""
-                        }`}
-                        key={i}
-                      >
-                        {" "}
-                        {console.log(episode.parsedEp)}
-                      </div>
-                    ))}
-                  </div>
+                <div className={styles.episodeMore}>
+                  <p>+</p>
                 </div>
               </div>
-            ))}
-          </div>
+              <div className={styles.episodeTimeBar}>
+                <div className={styles.bar}>
+                  {Object.entries(episode.parsedEp).map(([key, value], i) => (
+                    <div
+                      data-per={value.percent}
+                      style={{
+                        width: `${value.percent}%`,
+                        backgroundColor: value.inorout ? "#00c3ff" : "white",
+                      }}
+                      className={`${styles.bars} && ${
+                        value.inorout ? styles.barsIn : ""
+                      }`}
+                      key={i}
+                    >
+                      {" "}
+                      {console.log(episode.parsedEp)}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
         {/* </div> */}
       </Modal>
     </>
@@ -164,10 +160,6 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
   const { character } = ctx.params as IParams;
   const { data } = await api.get(`characters/${character}`);
 
-  // console.log("KRL )_(_)QW*(@!*()#*()@!*()@#!*)(@#*(", character);
-  // console.log("THIS IS MYDATA : +++++ ", data);
-
-  console.log("test consolando: 1 ", data.episodes);
   data.episodes.forEach(function (newdata: {
     parsedEp: { percent: number; inorout: boolean }[];
     apparitionTime: string;

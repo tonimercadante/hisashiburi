@@ -7,16 +7,15 @@ import { useRouter } from "next/router";
 import styles from "./styles.module.scss";
 
 type Characters = {
-    id: number;
-    name: string;
-    lastName: string;
-    icon: string;
-  };
+  id: number;
+  name: string;
+  lastName: string;
+  icon: string;
+};
 
 export default function HomePage() {
-    const quantity = "Browse over +100.000 characters";
-    const [characters, setCharacters] = useState<Characters[]>([]);
-
+  const quantity = "Browse over +100.000 characters";
+  const [characters, setCharacters] = useState<Characters[]>([]);
 
   return (
     <>
@@ -31,7 +30,8 @@ export default function HomePage() {
           />
           <h1>
             Search when anime
-            <br />characters appears!
+            <br />
+            characters appears!
           </h1>
           <h3>{quantity}</h3>
           <Search setCharacters={setCharacters} />
@@ -43,7 +43,7 @@ export default function HomePage() {
               <div key={char.id}>
                 <Link
                   href={{
-                    pathname: '/characters/[character]',
+                    pathname: "/characters/[character]",
                     query: { character: char.id },
                   }}
                 >
@@ -54,12 +54,10 @@ export default function HomePage() {
               </div>
             );
           })}
-          
         </div>
       </main>
 
       <footer className={styles.footer}></footer>
-     
     </>
   );
 }

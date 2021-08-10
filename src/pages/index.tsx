@@ -7,12 +7,7 @@ import styles from "../styles/home.module.scss";
 // fuzzy search
 // deploy
 
-
-
-
 export default function Home() {
-  
-  
   return (
     <div className={styles.container}>
       <Head>
@@ -27,15 +22,17 @@ export default function Home() {
 }
 
 // type Characters = {
-  //   id: number;
-  //   name: string;
-  //   lastName: string;
-  //   icon: string;
-  // };
-  // const description =
-  // "Discover when your<br> favorite charachters<br> are on screen!";
-  // const quantity = "Browse over +100.000 characters";
-{/* <HomePage /> */}
+//   id: number;
+//   name: string;
+//   lastName: string;
+//   icon: string;
+// };
+// const description =
+// "Discover when your<br> favorite charachters<br> are on screen!";
+// const quantity = "Browse over +100.000 characters";
+{
+  /* <HomePage /> */
+}
 // const [characters, setCharacters] = useState<Characters[]>([]);
 // const router = useRouter();
 // let name = "Itachi Uchiha";
@@ -45,7 +42,8 @@ export default function Home() {
 // let gaaraUrl = "/images/gaara.jpg";
 // let minatoUrl = "/images/minato.jpg";
 
-{/* <main className={styles.home}>
+{
+  /* <main className={styles.home}>
 <div className={styles.banner}>
 <Image
 className={styles.bannerImage}
@@ -75,8 +73,10 @@ Discover when your
           {char.name}
         </div>
       );
-    })} */}
-    {/* <Character name={gaara} icon={gaaraUrl} />
+    })} */
+}
+{
+  /* <Character name={gaara} icon={gaaraUrl} />
     <Character name={minato} icon={minatoUrl} />
     <Character name={name} icon={icon} />
     <Character name={gaara} icon={gaaraUrl} />
@@ -86,11 +86,18 @@ Discover when your
     <Character name={minato} icon={minatoUrl} />
     <Character name={name} icon={icon} />
     <Character name={gaara} icon={gaaraUrl} />
-    <Character name={minato} icon={minatoUrl} /> */}
-  {/* </div> */}
-  
-{/* </main> */}
+    <Character name={minato} icon={minatoUrl} /> */
+}
+{
+  /* </div> */
+}
 
-{/* <Modal isOpen={!!router.query.character}>
+{
+  /* </main> */
+}
+
+{
+  /* <Modal isOpen={!!router.query.character}>
   <h1>hi</h1>
-</Modal> */}
+</Modal> */
+}

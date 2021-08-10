@@ -49,7 +49,6 @@ export default function Search({ setCharacters, children }: SearchProps) {
           icon={faSearch}
           className={styles.searchIcon}
           size="2x"
-          
         />
       </div>
     </div>

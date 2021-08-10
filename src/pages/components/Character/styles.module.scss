@@ -2,7 +2,6 @@
   color: var(--character-name-color);
   position: relative;
   cursor: pointer;
-   
 
   &::after {
     position: absolute;
@@ -34,7 +33,7 @@
   z-index: 1;
   position: absolute;
   text-transform: capitalize;
-  font-family: 'Poppins';
+  font-family: "Poppins";
   font-weight: 600;
   letter-spacing: 2px;
   font-size: 1.8rem;
