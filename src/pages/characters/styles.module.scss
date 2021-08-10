@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .characterInfo {
   background-color: black;
   width: 100%;
@@ -39,5 +40,218 @@
   }
   div {
     padding: 1rem;
+=======
+.modalDetail {
+  z-index: 99;
+  min-height: 100vh;
+  width: 100%;
+  position: fixed;
+  overflow-y: scroll;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0;
+  background-color: rgba(255, 255, 255, 0.363);
+  display: flex;
+  justify-content: center;
+  padding-right: 15px;
+  &:focus {
+    outline: none;
+    border: none;
+  }
+}
+.modalOpened {
+  overflow: hidden;
+}
+.modal {
+  min-height: 100%;
+  width: 70%;
+  top: 0;
+  margin-top: 3rem;
+  position: absolute;
+  border: none;
+  border-radius: 2rem 2rem 0 0;
+  background-color: var(--background-color);
+  &:focus {
+    outline: none;
+  }
+  hr {
+    margin: 3rem 0;
+    background-color: #00c3ff98;
+    border: none;
+    height: 1px;
+  }
+}
+.characterBanner {
+  color: var(--character-name-color);
+  position: relative;
+  min-height: 45vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-end;
+  border: none;
+  border-radius: 2rem 2rem 0 0;
+  img {
+    border-radius: 2rem 2rem 0 0;
+  }
+
+  &::after {
+    border-radius: 2rem 2rem 0 0;
+
+    -webkit-box-shadow: inset 0px -30px 20px -10px var(--background-color);
+    -moz-box-shadow: inset 0px -30px 20px -10px var(--background-color);
+    box-shadow: inset 0px -30px 20px -10px var(--background-color);
+    content: "";
+    display: block;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}
+.closeIcon {
+  z-index: 999;
+  position: absolute;
+  top: 0;
+  cursor: pointer;
+  right: 0;
+  margin: 1.4rem;
+  padding: 0.8rem;
+  border-radius: 50%;
+  background-color: var(--background-contrast);
+  display: inline;
+  .icon {
+    color: #00c3ff;
+  }
+}
+
+.characterInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  z-index: 1;
+  font-family: "Poppins";
+  h2 {
+    color: rgb(238, 238, 238);
+    font-size: 2.2rem;
+    text-transform: capitalize;
+    padding-bottom: 0.5rem;
+    font-weight: 600;
+    letter-spacing: 0.2rem;
+  }
+  p {
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    letter-spacing: 0.2rem;
+
+    font-weight: 400;
+    color: rgb(199, 199, 199);
+  }
+}
+
+.episodes {
+  margin: auto;
+  width: 80%;
+  h4 {
+    font-size: 1.6rem;
+    padding: 0 0 2rem 3.2rem;
+  }
+}
+.titles {
+  display: flex;
+  justify-content: space-between;
+}
+.episodesText {
+  padding: 1.4rem 3rem;
+}
+.episode {
+  margin: auto;
+  background-color: var(--background-contrast);
+  display: flex;
+  flex-direction: column;
+  border: solid 1px var(--background-contrast);
+  border-radius: 0.6rem;
+  padding: 1.4rem;
+  width: 95%;
+  margin-bottom: 2.4rem;
+  &:hover {
+    border: solid 1px #00c3ff;
+    border-radius: 0.6rem;
+    transition: all ease-in-out 0.3s;
+  }
+}
+.episodeDetails {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 2rem;
+}
+.episodeInfo {
+  width: 100%;
+  display: flex;
+  p {
+    font-size: 1.5rem;
+    padding-right: 1rem;
+    &::first-letter {
+      text-transform: capitalize;
+    }
+  }
+}
+.episodeMore {
+  font-size: 3rem;
+  font-weight: 500;
+}
+
+.bar {
+  display: flex;  
+
+  height: 1rem;
+  background-color: white;
+  border-radius: 5px;
+  margin: 1rem 0;
+  div {
+    display: inline-block;
+    text-align: center;
+  }
+}
+.bars {
+
+  height: 1rem;
+  position: relative;
+  &:last-of-type {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+  &:first-of-type {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+}
+.barsIn {
+  
+  &::before {
+    content: attr(data-per);
+    padding: 0.7rem;
+    z-index: 2;
+    position: absolute;
+    background-color: rgb(0, 195, 255);
+    color: rgb(255, 255, 255);
+    top: -3.2rem;
+    width: max-content;
+    transform: translateX(-50%);
+    border-radius: 5px;
+  }
+  &::after {
+    content: " ";
+    position: absolute;
+    top: -1.5rem;
+    width: 1.23rem;
+    height: 1.23rem;
+    background-color: rgb(0, 195, 255);
+    transform: translateX(-50%) rotate(-45deg);
+>>>>>>> v2
   }
 }

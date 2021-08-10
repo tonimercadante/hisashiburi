@@ -1,4 +1,5 @@
 * {
+<<<<<<< HEAD
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -8,12 +9,64 @@
   --main-black: #1e1e1e;
   --hero-text-color: #fff;
   --input-color: #56575648;
+=======
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: var(--background-color);
+  font-family: Roboto;
+  color:  var(--hero-text-color);
+}
+h1 {
+  font-size: 3.2rem;
+  line-height: 4.8rem;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 2rem;
+  font-weight: 400;
+}
+:root {
+  --background-color: #060e18;
+  --background-contrast: #0b1a2c;
+  --main-black: #303030;
+  --hero-text-color: rgb(240, 240, 240);
+  --input-color: #e4d8c0;
+  --character-name-color: #f3f3f3;
+
+>>>>>>> v2
   --input-button-color: #313131;
   --background-gray: #ededed;
   --white-background: #faf9f9;
   --white: #fff;
   --text-grey: #696969;
   --text-grey-2: #5c5c5c;
+<<<<<<< HEAD
   --error: #ff6767f1;
   --success: #4afa67;
+=======
+}
+
+@font-face {
+  font-family: "AlpabeRunesChmc-axB5R.";
+  src: url("/fonts/AlpabeRunesChmc-axB5R.ttf");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "AlpabeRunesChmc-axB5R.";
+  src: url("/fonts/ArigatouGozaimasu-1Gnqg.ttf");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+>>>>>>> v2
 }

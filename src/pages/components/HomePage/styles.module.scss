@@ -1,0 +1,47 @@
+.home {
+    background-color: var(--background-color);
+    color: #FFF;
+  }
+  
+  .banner {
+    // background-image: url("../../public/images/header-image.png");
+    min-height: 45vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    text-align: center;
+    &::after {
+      -webkit-box-shadow: inset 0px -30px 20px -10px var(--main-black);
+      -moz-box-shadow: inset 0px -30px 20px -10px var(--main-black);
+      box-shadow: inset 0px -30px 20px -10px var(--background-color);
+      content: "";
+      display: block;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+  
+    h1,
+    h3 {
+      letter-spacing: 2px;
+      font-family: 'Poppins';
+      width: 70%;
+      z-index: 1;
+      text-shadow: 2px 2px 1px  rgba(0, 0, 0, 0.815);
+    }
+    h1 {
+      padding-top: 2rem;
+    }
+  }
+  
+  .results {
+    justify-content: center;
+    margin: 6rem 10rem;
+    display: grid;
+    gap: 10rem 10rem;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 200px));
+  }
+  

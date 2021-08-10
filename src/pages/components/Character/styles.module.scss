@@ -1,0 +1,43 @@
+.characterCard {
+  color: var(--character-name-color);
+  position: relative;
+  cursor: pointer;
+
+  &::after {
+    position: absolute;
+    display: block;
+    content: "";
+    -webkit-box-shadow: inset 0px -70px 20px -10px rgba(0, 0, 0, 0.836);
+    -moz-box-shadow: inset 0px -70px 20px -10px rgba(0, 0, 0, 0.836);
+    box-shadow: inset 0px -35px 20px -5px rgba(0, 0, 0, 0.836);
+    top: 0;
+    height: 99%;
+    width: 100%;
+    border-radius: 20px;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+}
+.characterText {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding-bottom: 0.1rem;
+  z-index: 1;
+  position: absolute;
+  text-transform: capitalize;
+  font-family: "Poppins";
+  font-weight: 600;
+  letter-spacing: 2px;
+  font-size: 1.8rem;
+  //   top: 85%;
+  //   left: 50%;
+  //   transform: translate(-50%, -50%);
+}
