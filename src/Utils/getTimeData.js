@@ -66,20 +66,20 @@ export default function getTimeData(times, total_duration) {
             data.push({
                 percent: Math.round((parsed_times[i]['start'] - 0) / total_duration * 100),
                 inorout: false,
-                time: timeFo(parsed_times[i]['start'], parsed_times[i]['end'])
+                time: formatedTime(parsed_times[i]['start'], parsed_times[i]['end'])
             })
         }
         data.push({
             percent: Math.round((parsed_times[i]['end'] - parsed_times[i]['start']) / total_duration * 100),
             inorout: true,
-            time: timeFo(parsed_times[i]['start'], parsed_times[i]['end'])
+            time: formatedTime(parsed_times[i]['start'], parsed_times[i]['end'])
         })
 
         if (i != times.length -1) {
             data.push({
                 percent: Math.round((parsed_times[i+1]['start'] - parsed_times[i]['end']) / total_duration * 100),
                 inorout: false,
-                time: timeFo(parsed_times[i]['start'], parsed_times[i]['end'])
+                time: formatedTime(parsed_times[i]['start'], parsed_times[i]['end'])
             })
 
         }
@@ -91,7 +91,7 @@ export default function getTimeData(times, total_duration) {
             data.push({
                 percent: Math.round((total_duration - parsed_times[i]['end']) / total_duration * 100),
                 inorout: false,
-                time: timeFo(parsed_times[i]['start'], parsed_times[i]['end'])})
+                time: formatedTime(parsed_times[i]['start'], parsed_times[i]['end'])})
 
             }
         i++;
@@ -100,9 +100,9 @@ export default function getTimeData(times, total_duration) {
 
 }
 
-function timeFo(start, end) {
+function formatedTime(start, end) {
     let parsedStart = new Date(start * 1000).toISOString().substr(11, 8);
     let parsedEnd = new Date(end * 1000).toISOString().substr(11, 8);
-    let timeFo = `${parsedStart} : ${parsedEnd}`;
-    return timeFo;
+    let formatedTime = `${parsedStart} : ${parsedEnd}`;
+    return formatedTime;
 }
