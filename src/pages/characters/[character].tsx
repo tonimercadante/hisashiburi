@@ -1,22 +1,26 @@
 import Modal from "react-modal";
+import { GetStaticPaths, GetStaticProps } from "next";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
-import styles from "./styles.module.scss";
-import Image from "next/image";
-import getTimeData from "../../Utils/getTimeData";
-import { GetStaticPaths, GetStaticProps } from "next";
 import { api } from "../../services/api";
 import { ParsedUrlQuery } from "querystring";
-// Possible approaches to the bar thing:
-// 1. create a lot of bar and give them the absolute position and
-// then position then the way i need so i need to have a way to get
-// the starting position.
-// 2. create a lot of bars close to each other like fragmenting the
-// time it appears like not appears at 0:00 to 4:00 then the bar
-// will have one color representing some percentage then from 4:00
-// to 8:40 the character appears, so we create a new bar and to 8:40
-// to the final he doesnt appears anymore, so we create a new bar to
-// the end of the time
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
+import getTimeData from "../../Utils/getTimeData";
+import Image from "next/image";
+import styles from "./styles.module.scss";
+
+/* Possible approaches to the bar thing:
+1. create a lot of bar and give them the absolute position and
+then position then the way i need so i need to have a way to get
+the starting position.
+2. create a lot of bars close to each other like fragmenting the
+time it appears like not appears at 0:00 to 4:00 then the bar
+will have one color representing some percentage then from 4:00
+to 8:40 the character appears, so we create a new bar and to 8:40
+to the final he doesnt appears anymore, so we create a new bar to
+/the end of the time
+*/
 Modal.setAppElement("#__next");
 
 type Character = {
@@ -65,7 +69,7 @@ export default function Characters({ characterData }: CharacterProps) {
     router.prefetch("/");
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  const onRequestClos = () => {
+  const closeModal = () => {
     setTimeout(() => {
       router.push("/");
     }, 100);
@@ -73,15 +77,13 @@ export default function Characters({ characterData }: CharacterProps) {
   return (
     <>
       <Modal
-      
         bodyOpenClassName={styles.modalOpened}
         className={styles.modal}
         overlayClassName={styles.modalDetail}
         isOpen={true} // The modal should always be shown on page load, it is the 'page'
-        onRequestClose={onRequestClos}
+        onRequestClose={closeModal}
         contentLabel="Post modal"
-        preventScroll={true}
-        
+        preventScroll={true}   
       >
         {/* <div className={styles.modalDetail}> */}
           <div className={styles.characterBanner}>
@@ -91,6 +93,13 @@ export default function Characters({ characterData }: CharacterProps) {
               objectFit="cover"
               quality="100"
             />
+            <div className={styles.closeIcon} onClick={closeModal}>
+
+             <FontAwesomeIcon
+            icon={faTimes}
+            className={styles.icon}
+            size="2x"
+        /></div>
           </div>
 
           <div className={styles.characterInfo}>

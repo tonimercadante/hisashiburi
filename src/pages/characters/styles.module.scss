@@ -36,7 +36,7 @@
   }
   hr {
     margin: 3rem 0;
-    background-color: rgb(231, 231, 231);
+    background-color: #00c3ff98;
     border: none;
     height: 1px;
   }
@@ -70,6 +70,22 @@
     width: 100%;
   }
 }
+.closeIcon {
+  z-index:999;
+  position: absolute;
+  top: 0;
+  cursor: pointer;
+  right: 0;
+  margin: 1.4rem;
+  padding: 0.8rem;
+  border-radius: 50%;
+  background-color: var(--background-contrast);
+  display: inline;
+  .icon {
+    color: #00c3ff;
+  }
+}
+
 .characterInfo {
   display: flex;
   flex-direction: column;
@@ -117,9 +133,9 @@
   flex-direction: column;
   border: solid 1px var(--background-contrast);
   border-radius: 0.6rem;
-  padding: 1rem;
+  padding: 1.4rem;
   width: 95%;
-  margin-bottom: 2rem;
+  margin-bottom: 2.4rem;
   &:hover {
     border: solid 1px #00c3ff;
     border-radius: 0.6rem;

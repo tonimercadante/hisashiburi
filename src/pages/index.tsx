@@ -1,14 +1,12 @@
 import Head from "next/head";
 import styles from "../styles/home.module.scss";
 
-// improve our ui
-//
+// load more episodes after api completed
 // create a component to pass the time like 00:00
-// type the props of the getStaticProps rocket seat done
-// pass the data in two ways, the percent and the time like 00:00:00 done
 // layout change homepage component for api, bot and about
 // fuzzy search
 // deploy
+
 
 
 
