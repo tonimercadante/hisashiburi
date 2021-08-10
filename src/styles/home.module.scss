@@ -1,18 +1,3 @@
-<<<<<<< HEAD
-.characterResults {
-  min-height: 80vh;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-}
-.characterImage {
-  img {
-    max-width: 200px;
-    max-height: 200px;
-  }
-}
-.search {
-  cursor: pointer;
-=======
 .home {
   height: 100vh;
   background-color: var(--main-black);
@@ -42,5 +27,4 @@
   display: grid;
   gap: 10rem 14rem;
   grid-template-columns: repeat(auto-fit, minmax(20rem, auto));
->>>>>>> v2
 }
