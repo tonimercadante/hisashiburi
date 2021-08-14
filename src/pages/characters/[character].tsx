@@ -10,7 +10,8 @@ import getTimeData from "../../Utils/getTimeData";
 import Image from "next/image";
 import styles from "./styles.module.scss";
 import { parseBody } from "next/dist/next-server/server/api-utils";
-
+import type { ReactElement } from 'react'
+import Layout from "../components/Layout/layout"
 /* Possible approaches to the bar thing:
 1. create a lot of bar and give them the absolute position and
 then position then the way i need so i need to have a way to get
@@ -180,3 +181,10 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
   };
 };
 
+Characters.getLayout = function getLayout(page: ReactElement) {
+  return (
+    <Layout>
+      {page}
+    </Layout>
+  )
+}

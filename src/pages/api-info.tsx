@@ -1,3 +1,5 @@
+import type { ReactElement } from "react";
+import NavLayout from "./components/Layout/navLayout";
 export default function ApiInfo() {
   return (
     <div>
@@ -5,3 +7,7 @@ export default function ApiInfo() {
     </div>
   );
 }
+
+ApiInfo.getLayout = function getLayout(page: ReactElement) {
+  return <NavLayout>{page}</NavLayout>;
+};

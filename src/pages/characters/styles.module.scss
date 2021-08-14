@@ -1,46 +1,3 @@
-<<<<<<< HEAD
-.characterInfo {
-  background-color: black;
-  width: 100%;
-  height: 100vh;
-  // background-image: linear-gradient(
-  //   180deg,
-  //   rgba(222, 222, 222, 0.151) 0%,
-  //   rgba(161, 161, 161, 0.342) 39%,
-  //   rgba(48, 48, 48, 0.712) 81%
-  // );
-  // url("../../../public/images/minato_cover.jpg");
-  background-size: cover;
-  color: aliceblue;
-}
-
-.episodesList {
-  background-color: black;
-
-  height: 90vh;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  overflow-y: scroll;
-  padding: 3rem 3rem;
-  color: aliceblue;
-}
-
-.episode {
-  background-color: black;
-
-  margin: 1rem 0;
-  display: flex;
-  background: rgba(27, 27, 27, 0.76);
-  transition: ease-in-out 0.2s;
-  color: aliceblue;
-
-  &:hover {
-    padding: 1.2rem;
-  }
-  div {
-    padding: 1rem;
-=======
 .modalDetail {
   z-index: 99;
   min-height: 100vh;
@@ -207,7 +164,6 @@
 
 .bar {
   display: flex;  
-
   height: 1rem;
   background-color: white;
   border-radius: 5px;
@@ -252,6 +208,5 @@
     height: 1.23rem;
     background-color: rgb(0, 195, 255);
     transform: translateX(-50%) rotate(-45deg);
->>>>>>> v2
   }
 }
