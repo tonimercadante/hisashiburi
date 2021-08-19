@@ -5,6 +5,7 @@
 }
 
 html {
+  min-width: fit-content;
   font-size: 62.5%;
 }
 
@@ -30,17 +31,32 @@ body {
   --text-grey-2: #5c5c5c;
 }
 
+
+
 h1 {
   font-size: 3.2rem;
   line-height: 4.8rem;
   font-weight: 600;
+
 }
 
 h3 {
   font-size: 2rem;
   font-weight: 400;
-}
 
+}
+@media screen and (max-width: 1080px) {
+  h1 {
+    font-size: calc(2.2rem + 1vw);
+    line-height: 4.8rem;
+    font-weight: 600;
+  }
+  
+  h3 {
+    font-size: calc(1rem + 1vw);
+    font-weight: 400;
+  }
+}
 @font-face {
   font-family: "AlpabeRunesChmc-axB5R.";
   src: url("/fonts/AlpabeRunesChmc-axB5R.ttf");

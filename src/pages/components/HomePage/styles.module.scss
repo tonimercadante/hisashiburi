@@ -5,13 +5,22 @@
   
   .banner {
     // background-image: url("../../public/images/header-image.png");
-    min-height: 45vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
     position: relative;
     text-align: center;
+    max-height: 45vh;
+    padding: 20rem 0;
+    @media screen and (max-width: 550px) {
+      img{
+        object-position: right;
+      }
+
+    }
+
+
     &::after {
       -webkit-box-shadow: inset 0px -30px 20px -10px var(--main-black);
       -moz-box-shadow: inset 0px -30px 20px -10px var(--main-black);
@@ -26,6 +35,7 @@
   
     h1,
     h3 {
+      padding: 2.6rem 0;
       letter-spacing: 2px;
       font-family: 'Poppins';
       width: 70%;
@@ -43,5 +53,15 @@
     display: grid;
     gap: 10rem 10rem;
     grid-template-columns: repeat(auto-fit, minmax(20rem, 200px));
+    @media screen and (max-width: 1200px) {
+      gap: 5rem;
+    }
+    @media screen and (max-width: 700px) {
+      gap: 2rem;
+      margin: 2rem 3rem;
+
+    }
+
   }
+
   

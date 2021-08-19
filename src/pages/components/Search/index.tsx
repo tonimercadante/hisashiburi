@@ -25,7 +25,7 @@ export default function Search({ setCharacters, children }: SearchProps) {
       cancelToken.cancel("Operation canceled due to new request.");
     }
     cancelToken = axios.CancelToken.source();
-    if (query.length < 3) {
+    if (query.length < 0) {
       setCharacters([]);
     } else {
       try {

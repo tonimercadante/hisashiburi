@@ -15,7 +15,7 @@ export default function Layout({ children }: layoutProps) {
           rel="stylesheet"
         />
       </Head>
-      <NavBar />
+      {/* <NavBar /> */}
       {children}
       <HomePage />
     </>
