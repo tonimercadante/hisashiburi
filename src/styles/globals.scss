@@ -13,16 +13,7 @@ body {
   font-family: Roboto;
   color:  var(--hero-text-color);
 }
-h1 {
-  font-size: 3.2rem;
-  line-height: 4.8rem;
-  font-weight: 600;
-}
 
-h3 {
-  font-size: 2rem;
-  font-weight: 400;
-}
 :root {
   --background-color: #060e18;
   --background-contrast: #0b1a2c;
@@ -37,6 +28,17 @@ h3 {
   --white: #fff;
   --text-grey: #696969;
   --text-grey-2: #5c5c5c;
+}
+
+h1 {
+  font-size: 3.2rem;
+  line-height: 4.8rem;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 2rem;
+  font-weight: 400;
 }
 
 @font-face {

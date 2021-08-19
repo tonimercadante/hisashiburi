@@ -2,8 +2,7 @@ import Head from "next/head";
 import styles from "../styles/home.module.scss";
 import Layout from "./components/Layout/layout";
 import type { ReactElement } from 'react'
-
-// add pages for about api bot and active class
+// bug when first page is other than home then click homne
 // responsive
 // remove hours if it only have minutes
 // add waiting user input to bottom or animation

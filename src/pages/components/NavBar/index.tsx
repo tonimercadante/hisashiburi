@@ -1,15 +1,17 @@
 import styles from "./styles.module.scss";
 import Link from "next/link";
+import { useRouter } from 'next/router';
 
 export default function NavBar() {
+  const router = useRouter();
+
   return (
     <nav className={styles.navBar}>
       <p className={styles.logo}>Hisashiburi</p>
       <ul>
         <li>
           <Link href="/">
-            <a className={styles.anim}>
-              {" "}
+            <a className={router.pathname == "/" ? styles.active : styles.anim}>
               <p>Home</p>
             </a>
           </Link>
@@ -17,7 +19,7 @@ export default function NavBar() {
         <p className={styles.bar}>/</p>
         <li>
           <Link href="/api-info">
-            <a className={styles.anim}>
+            <a className={router.pathname == "/api-info" ? styles.active : styles.anim}>
               <p>Api</p>
             </a>
           </Link>
@@ -25,7 +27,7 @@ export default function NavBar() {
         <p className={styles.bar}>/</p>
         <li>
           <Link href="/bot">
-            <a className={styles.anim}>
+            <a className={router.pathname == "/bot" ? styles.active : styles.anim}>
               <p>Bot</p>
             </a>
           </Link>
@@ -33,7 +35,7 @@ export default function NavBar() {
         <p className={styles.bar}>/</p>
         <li>
           <Link href="/about">
-            <a className={styles.anim}>
+            <a className={router.pathname == "/about" ? `${styles.active} ${styles.anim}` : styles.anim}>
               <p>About</p>
             </a>
           </Link>
