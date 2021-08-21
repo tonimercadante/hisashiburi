@@ -177,9 +177,7 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
     cover: data.cover,
     episodes: data.episodes,
   };
-  const pageTitle = {
-    title: `${data.name} ${data.lastName}`
-  }
+  
   return {
     props: {
       characterData,
