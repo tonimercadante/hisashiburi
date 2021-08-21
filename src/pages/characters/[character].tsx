@@ -1,6 +1,6 @@
 import Modal from "react-modal";
 import { GetStaticPaths, GetStaticProps } from "next";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { useRouter } from "next/router";
 import { api } from "../../services/api";
 import { ParsedUrlQuery } from "querystring";
@@ -12,6 +12,7 @@ import styles from "./styles.module.scss";
 import { parseBody } from "next/dist/next-server/server/api-utils";
 import type { ReactElement } from 'react'
 import Layout from "../components/Layout/layout"
+import Head from "next/head";
 /* Possible approaches to the bar thing:
 1. create a lot of bar and give them the absolute position and
 then position then the way i need so i need to have a way to get
@@ -78,6 +79,9 @@ export default function Characters({ characterData }: CharacterProps) {
   };
   return (
     <>
+      <Head>
+      <title>{`${characterData.name} ${characterData.lastName}`}</title>
+      </Head>
       <Modal
         bodyOpenClassName={styles.modalOpened}
         className={styles.modal}
@@ -173,7 +177,9 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
     cover: data.cover,
     episodes: data.episodes,
   };
-
+  const pageTitle = {
+    title: `${data.name} ${data.lastName}`
+  }
   return {
     props: {
       characterData,
