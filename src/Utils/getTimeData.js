@@ -60,6 +60,21 @@ export default function getTimeData(times, total_duration) {
 function formatedTime(start, end) {
     let parsedStart = new Date(start * 1000).toISOString().substr(11, 8);
     let parsedEnd = new Date(end * 1000).toISOString().substr(11, 8);
-    let formatedTime = `${parsedStart} : ${parsedEnd}`;
+    let a = formathours(parsedStart);
+    let b = formathours(parsedEnd);
+    let formatedTime = `${a} - ${b}`;
+    
     return formatedTime;
+}
+
+function formathours(date) {
+    let formatDate = date.split(':');
+    if (formatDate[0] == '00') {
+        formatDate = `${formatDate[1]}:${formatDate[2]}`
+        return formatDate;
+    }
+    else {
+        return date
+    }
+
 }

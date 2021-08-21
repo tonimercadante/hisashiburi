@@ -117,8 +117,8 @@ export default function Characters({ characterData }: CharacterProps) {
                   <p>{episode.number}.</p>
                   <p>{episode.title}</p>
                 </div>
-                <div className={styles.episodeMore}>
-                  <p>+</p>
+                <div className={styles.episodeDuration}>
+                  <p>{episode.duration}</p>
                 </div>
               </div>
                 <div className={styles.bar}>
