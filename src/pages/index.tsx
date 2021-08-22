@@ -3,8 +3,6 @@ import styles from "../styles/home.module.scss";
 import Layout from "./components/Layout/layout";
 import type { ReactElement } from 'react'
 // bug when first page is other than home then click homne
-// title per page
-// remove hours if it only have minutes
 // add waiting user input to bottom or animation
 export default function Home() {
   const title = "Hisashiburi - found the episodes your favorite characters appears";
