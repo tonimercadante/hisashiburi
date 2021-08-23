@@ -13,63 +13,82 @@ export default function NavBar() {
   return (
     <nav className={styles.navBar}>
       <p className={styles.logo}>Hisashiburi</p>
-      <ul className={click ? `${styles.navItens} ${styles.activated}` : styles.navItens}>
+      <ul
+        className={
+          click ? `${styles.navItens} ${styles.activated}` : styles.navItens
+        }
+      >
         <li>
           <Link href="/">
-            <a
-              className={router.pathname == "/" ? styles.active : styles.anim}
-              onClick={Close}
-            >
-              <p>Home</p>
+            <a className={styles.anim} onClick={Close}>
+              <p
+                className={
+                  router.pathname == "/"
+                    ? `${styles.anim} ${styles.active}`
+                    : styles.anim
+                }
+              >
+                Home
+              </p>
             </a>
           </Link>
         </li>
         <p className={styles.bar}>/</p>
         <li>
           <Link href="/api-info">
-            <a
-              className={
-                router.pathname == "/api-info" ? styles.active : styles.anim
-              }
-              onClick={Close}
-            >
-              <p>Api</p>
+          <a className={styles.anim} onClick={Close}>
+
+              <p
+                className={
+                  router.pathname == "/api-info"
+                    ? `${styles.anim} ${styles.active}`
+                    : styles.anim
+                }
+              >Api</p>
             </a>
           </Link>
         </li>
         <p className={styles.bar}>/</p>
         <li>
           <Link href="/bot">
-            <a
-              className={
-                router.pathname == "/bot" ? styles.active : styles.anim
-              }
-              onClick={Close}
-            >
-              <p>Bot</p>
+          <a className={styles.anim} onClick={Close}>
+
+              <p
+                className={
+                  router.pathname == "/bot"
+                    ? `${styles.anim} ${styles.active}`
+                    : styles.anim
+                }
+              >Bot</p>
             </a>
           </Link>
         </li>
         <p className={styles.bar}>/</p>
         <li>
           <Link href="/about">
-            <a
-              className={
-                router.pathname == "/about"
-                  ? `${styles.active} ${styles.anim}`
-                  : styles.anim
-              }
-              onClick={Close}
-            >
-              <p>About</p>
+          <a className={styles.anim} onClick={Close}>
+
+              <p
+                className={
+                  router.pathname == "/about"
+                    ? `${styles.anim} ${styles.active}`
+                    : styles.anim
+                }
+              >About</p>
             </a>
           </Link>
         </li>
       </ul>
       <div onClick={handleClick} className={styles.mobileMenu}>
-        <div className={click ? `${styles.bar1} ${styles.change}` : styles.bar1}></div>
-        <div className={click ? `${styles.bar2} ${styles.change}` : styles.bar2}></div>
-        <div className={click ? `${styles.bar3} ${styles.change}` : styles.bar3}></div>
+        <div
+          className={click ? `${styles.bar1} ${styles.change}` : styles.bar1}
+        ></div>
+        <div
+          className={click ? `${styles.bar2} ${styles.change}` : styles.bar2}
+        ></div>
+        <div
+          className={click ? `${styles.bar3} ${styles.change}` : styles.bar3}
+        ></div>
       </div>
       {/* {click ? (
 

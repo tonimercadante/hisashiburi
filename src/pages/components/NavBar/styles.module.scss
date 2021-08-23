@@ -66,7 +66,13 @@
         display: none;
       }
     }
-    li {
+    li {  
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform: skew(-20deg);
+      
       font-family: "Roboto";
       @media screen and (max-width: 700px) {
         padding: 2rem 0;
@@ -81,30 +87,23 @@
         text-decoration: none;
         letter-spacing: 1px;
         width: 7rem;
-        padding: 0.7rem;
-        position: relative;
-        z-index: 80;
-        color: rgba(255, 255, 255, 0.849);
+        p.active {
+          width: 100%;   
+        } 
         @media screen and (max-width: 700px) {
           width: 15rem;
-        }
-
-        &:hover::before {
-          transform: scaleX(1) skew(-20deg);
-        }
-        &::before {
-          transform-origin: left;
-          transform: scaleX(0) skew(-20deg);
-          transition: 0.3s linear;
-          content: "";
+                  }
+        p{
+          color: lightcyan;
+          transition: all 0.2s ease-in-out;
           z-index: -1;
-          display: block;
-          position: absolute;
+          display: flex;
+          align-items: center;
+          justify-content: center;
           top: 0;
-          right: 0;
-          bottom: 0;
           left: 0;
-          inset: 0 0 0 0;
+          width: 0;
+          padding: 0.7rem 0;
           background: rgb(14, 30, 58);
           background: linear-gradient(
             93deg,
@@ -115,15 +114,15 @@
             rgba(10, 125, 187, 1) 85%,
             rgba(17, 35, 66, 1) 100%
           );
+          &:hover{
+            width: 100%;
+          }
         }
       }
     }
   }
 }
 
-.active {
-  color: red;
-}
 .mobileMenu {
   display: none;
   @media screen and (max-width: 700px) {
@@ -150,7 +149,8 @@
 .change.bar3 {
   -webkit-transform: rotate(45deg) translate(-8px, -8px);
   transform: rotate(45deg) translate(-8px, -8px);
-} .activated.navItens {
+} 
+.activated.navItens {
   background: var(--background-color);
   left: 0;
   opacity: 1;
@@ -160,3 +160,11 @@
   z-index: 999;
 
   }
+ 
+  // .anim.active {
+  //   color: yellow !important;
+  //   &::before {
+  //     width: 100%;
+
+  //   }
+  // } 
