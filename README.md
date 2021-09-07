@@ -1,4 +1,4 @@
-Hisashiburi is a project of a website to show everytime a character appears on screen.
+Hisashiburi is a website to show everytime an character appears on screen.
 
 ### Technologies
 
