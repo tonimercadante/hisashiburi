@@ -2,4 +2,4 @@ Hisashiburi is a project of a website to show everytime a character appears on s
 
 ### Technologies
 
-<a src="https://nextjs.org">Next.js<a>
+<a href="https://nextjs.org">Next.js<a>
