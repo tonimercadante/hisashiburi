@@ -11,4 +11,16 @@ We all have or favorite characters, what if we want to see everithing about them
 ## About the project
 This project was created using <a href="https://nextjs.org">Next.js<a>, create the modal and the utils to work with the time of the episodes was a nice challenge.
 
-
+### Run local
+Install the project dependencies with yarn
+```
+  yarn install
+```
+Then start the fake-server, so you can have our data
+```
+  json-server --watch db.json -p 3333
+```
+and run it 
+```
+  yarn dev
+``
