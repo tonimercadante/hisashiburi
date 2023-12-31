@@ -1,6 +1,6 @@
 import Search from "../Search";
 import Character from "../Character";
-import Image from "next/legacy/image";
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/router";
@@ -23,10 +23,12 @@ export default function HomePage() {
         <Image
           className={styles.bannerImage}
           src="/images/header-image.png"
-          layout="fill"
-          objectFit="cover"
           quality="100"
-        />
+          fill
+          sizes="100vw"
+          style={{
+            objectFit: "cover"
+          }} />
         <h1>
           Search when anime
           <br />
