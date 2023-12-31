@@ -7,7 +7,7 @@ import { ParsedUrlQuery } from "querystring";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import getTimeData from "../../Utils/getTimeData";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import styles from "./styles.module.scss";
 import { parseBody } from "next/dist/next-server/server/api-utils";
 import type { ReactElement } from 'react'

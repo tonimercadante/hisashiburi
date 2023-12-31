@@ -1,5 +1,5 @@
 import styles from "./styles.module.scss";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { ReactNode } from "react";
 
 type CharacterProps = {
