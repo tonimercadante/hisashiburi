@@ -4,10 +4,11 @@ module.exports = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "cdn.blocktoro.com",
+        hostname: "**",
         port: "",
-        // pathname: '/account123/**',
+        pathname: "**",
       },
+
     ],
   },
 };
