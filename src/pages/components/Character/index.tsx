@@ -13,13 +13,15 @@ export default function Character({ name, icon, children }: CharacterProps) {
     <div className={styles.characterCard}>
       <p className={styles.characterText}>{`${name}`}</p>
       <Image
+        alt={name}
         src={icon}
         width="200"
         height="200"
         style={{
           maxWidth: "100%",
-          height: "auto"
-        }} />
+          height: "auto",
+        }}
+      />
     </div>
   );
 }

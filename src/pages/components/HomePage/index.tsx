@@ -17,47 +17,49 @@ export default function HomePage() {
   const quantity = "Browse over +100.000 characters";
   const [characters, setCharacters] = useState<Characters[]>([]);
 
-  return <>
-    <main className={styles.home}>
-      <div className={styles.banner}>
-        <Image
-          className={styles.bannerImage}
-          src="/images/header-image.png"
-          quality="100"
-          fill
-          sizes="100vw"
-          style={{
-            objectFit: "cover"
-          }} />
-        <h1>
-          Search when anime
-          <br />
-          characters appears!
-        </h1>
-        <h3>{quantity}</h3>
-        <Search setCharacters={setCharacters} />
-      </div>
+  return (
+    <>
+      <main className={styles.home}>
+        <div className={styles.banner}>
+          <Image
+            alt={"Banner girl"}
+            className={styles.bannerImage}
+            src="/images/header-image.png"
+            quality="100"
+            fill
+            sizes="100vw"
+            style={{
+              objectFit: "cover",
+            }}
+          />
+          <h1>
+            Search when anime
+            <br />
+            characters appears!
+          </h1>
+          <h3>{quantity}</h3>
+          <Search setCharacters={setCharacters} />
+        </div>
 
-      <div className={styles.results}>
-        {characters.map((char) => {
-          return (
-            <div key={char.id}>
-              <Link
-                href={{
-                  pathname: "/characters/[character]",
-                  query: { character: char.id },
-                }}
-              >
+        <div className={styles.results}>
+          {characters.map((char) => {
+            return (
+              <div key={char.id}>
+                <Link
+                  href={{
+                    pathname: "/characters/[character]",
+                    query: { character: char.id },
+                  }}
+                >
+                  <Character name={char.name} icon={char.icon} />
+                </Link>
+              </div>
+            );
+          })}
+        </div>
+      </main>
 
-                <Character name={char.name} icon={char.icon} />
-
-              </Link>
-            </div>
-          );
-        })}
-      </div>
-    </main>
-
-    <footer className={styles.footer}></footer>
-  </>;
+      <footer className={styles.footer}></footer>
+    </>
+  );
 }

@@ -10,8 +10,8 @@ import getTimeData from "../../Utils/getTimeData";
 import Image from "next/image";
 import styles from "./styles.module.scss";
 import { parseBody } from "next/dist/next-server/server/api-utils";
-import type { ReactElement } from 'react'
-import Layout from "../components/Layout/layout"
+import type { ReactElement } from "react";
+import Layout from "../components/Layout/layout";
 import Head from "next/head";
 /* Possible approaches to the bar thing:
 1. create a lot of bar and give them the absolute position and
@@ -77,51 +77,54 @@ export default function Characters({ characterData }: CharacterProps) {
       router.push("/");
     }, 100);
   };
-  return <>
-    <Head>
-    <title>{`${characterData.name} ${characterData.lastName}`}</title>
-    </Head>
-    <Modal
-      bodyOpenClassName={styles.modalOpened}
-      className={styles.modal}
-      overlayClassName={styles.modalDetail}
-      isOpen={true} // The modal should always be shown on page load, it is the 'page'
-      onRequestClose={closeModal}
-      contentLabel="Post modal"
-      preventScroll={true}
-    >
-      <div className={styles.characterBanner}>
-        <Image
-          src={characterData.cover}
-          quality="100"
-          fill
-          sizes="100vw"
-          style={{
-            objectFit: "cover"
-          }} />
-        <div className={styles.closeIcon} onClick={closeModal}>
-          <FontAwesomeIcon icon={faTimes} className={styles.icon} size="2x" />
+  return (
+    <>
+      <Head>
+        <title>{`${characterData.name} ${characterData.lastName}`}</title>
+      </Head>
+      <Modal
+        bodyOpenClassName={styles.modalOpened}
+        className={styles.modal}
+        overlayClassName={styles.modalDetail}
+        isOpen={true} // The modal should always be shown on page load, it is the 'page'
+        onRequestClose={closeModal}
+        contentLabel="Post modal"
+        preventScroll={true}
+      >
+        <div className={styles.characterBanner}>
+          <Image
+            alt={characterData.name}
+            src={characterData.cover}
+            quality="100"
+            fill
+            sizes="100vw"
+            style={{
+              objectFit: "cover",
+            }}
+          />
+          <div className={styles.closeIcon} onClick={closeModal}>
+            <FontAwesomeIcon icon={faTimes} className={styles.icon} size="2x" />
+          </div>
         </div>
-      </div>
 
-      <div className={styles.characterInfo}>
-        <h2>{`${characterData.name} ${characterData.lastName}`}</h2>
-        <p>Naruto Shippuden</p>
-      </div>
-      <hr />
-      <div className={styles.episodes}>
-        <h4>Episodes: </h4>
-        {characterData.episodes.map((episode) => (
-          <div key={episode.id} className={styles.episode}>
-            <div className={styles.episodeDetails}>
-              <div className={styles.episodeInfo}>
-                <p>{episode.number}.</p>
-                <p>{episode.title}</p>
+        <div className={styles.characterInfo}>
+          <h2>{`${characterData.name} ${characterData.lastName}`}</h2>
+          <p>Naruto Shippuden</p>
+        </div>
+        <hr />
+        <div className={styles.episodes}>
+          <h4>Episodes: </h4>
+          {characterData.episodes.map((episode) => (
+            <div key={episode.id} className={styles.episode}>
+              <div className={styles.episodeDetails}>
+                <div className={styles.episodeInfo}>
+                  <p>{episode.number}.</p>
+                  <p>{episode.title}</p>
+                </div>
+                <div className={styles.episodeDuration}>
+                  <p>{episode.duration}</p>
+                </div>
               </div>
-              <div className={styles.episodeDuration}>
-                <p>{episode.duration}</p>
-              </div>
-            </div>
               <div className={styles.bar}>
                 {Object.entries(episode.parsedEp).map(([key, value], i) => (
                   <div
@@ -134,16 +137,15 @@ export default function Characters({ characterData }: CharacterProps) {
                       value.inorout ? styles.barsIn : ""
                     }`}
                     key={i}
-                  >
-                   
-                  </div>
+                  ></div>
                 ))}
               </div>
-          </div>
-        ))}
-      </div>
-    </Modal>
-  </>;
+            </div>
+          ))}
+        </div>
+      </Modal>
+    </>
+  );
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -177,7 +179,7 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
     cover: data.cover,
     episodes: data.episodes,
   };
-  
+
   return {
     props: {
       characterData,
@@ -186,9 +188,5 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
 };
 
 Characters.getLayout = function getLayout(page: ReactElement) {
-  return (
-    <Layout>
-      {page}
-    </Layout>
-  )
-}
+  return <Layout>{page}</Layout>;
+};
