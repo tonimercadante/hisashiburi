@@ -1,6 +1,8 @@
+"use client";
+
 import styles from "./styles.module.scss";
 import Link from "next/link";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export default function NavBar() {
@@ -20,7 +22,6 @@ export default function NavBar() {
       >
         <li>
           <Link href="/" className={styles.anim} onClick={Close}>
-
             <p
               className={
                 router.pathname == "/"
@@ -30,49 +31,48 @@ export default function NavBar() {
             >
               Home
             </p>
-
           </Link>
         </li>
         <p className={styles.bar}>/</p>
         <li>
           <Link href="/api-info" className={styles.anim} onClick={Close}>
-
             <p
               className={
                 router.pathname == "/api-info"
                   ? `${styles.anim} ${styles.active}`
                   : styles.anim
               }
-            >Api</p>
-
+            >
+              Api
+            </p>
           </Link>
         </li>
         <p className={styles.bar}>/</p>
         <li>
           <Link href="/bot" className={styles.anim} onClick={Close}>
-
             <p
               className={
                 router.pathname == "/bot"
                   ? `${styles.anim} ${styles.active}`
                   : styles.anim
               }
-            >Bot</p>
-
+            >
+              Bot
+            </p>
           </Link>
         </li>
         <p className={styles.bar}>/</p>
         <li>
           <Link href="/about" className={styles.anim} onClick={Close}>
-
             <p
               className={
                 router.pathname == "/about"
                   ? `${styles.anim} ${styles.active}`
                   : styles.anim
               }
-            >About</p>
-
+            >
+              About
+            </p>
           </Link>
         </li>
       </ul>
@@ -90,7 +90,7 @@ export default function NavBar() {
       {/* {click ? (
 
 ) : (
-  
+
 )} */}
     </nav>
   );

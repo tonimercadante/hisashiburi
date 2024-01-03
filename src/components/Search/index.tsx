@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { Dispatch, ReactNode, SetStateAction } from "react";
 import axios, { CancelTokenSource } from "axios";
-import { api } from "../../../services/api";
+import { api } from "../../services/api";
 
 type SearchProps = {
   setCharacters: Dispatch<Characters[]>;

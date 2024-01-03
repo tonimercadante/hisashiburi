@@ -1,239 +1,227 @@
 {
-    "characters": [
+  "characters": [
+    {
+      "id": 1,
+      "name": "itachi",
+      "lastName": "uchiha",
+      "anime": ["naruto shippuden"],
+      "icon": "/images/itachi.jpg",
+      "cover": "/images/itachi_cover.jpg",
+      "totalAppearances": 2,
+
+      "episodes": [
         {
-            "id": 1,
-            "name": "itachi",
-            "lastName": "uchiha",
-            "anime": ["naruto shippuden"],
-            "icon": "/images/itachi.jpg",
-            "cover": "/images/itachi_cover.jpg",
-            "totalAppearances": 2,
-
-            "episodes": [
-                {
-                    "id": 1,
-                    "title": "itachi first appearsss",
-                    "number": 27,
-                    "arch": "akatsuki appearss",
-                    "duration": "4:12:00",
-                    "apparitionTime": [
-                        {
-                            "start": "3:00",
-                            "end": "9:00"
-                        },
-                        {
-                            "start": "4:10:00",
-                            "end": "4:12:00"
-                        }
-                    ]
-
-                },
-                {
-                    "id": 2,
-                    "title": "itachi second appearsss",
-                    "number": 41,
-                    "arch": "Akatsuki againn",
-                    "duration": "21:25",
-                    "apparitionTime": [
-                        {
-                            "start": "3:43",
-                            "end": "4:05"
-                        },
-                        {
-                            "start": "15:23",
-                            "end": "16:29"
-                        }
-                    ]
-
-                }
-            ]
+          "id": 1,
+          "title": "itachi first appearsss",
+          "number": 27,
+          "arch": "akatsuki appearss",
+          "duration": "4:12:00",
+          "apparitionTime": [
+            {
+              "start": "3:00",
+              "end": "9:00"
+            },
+            {
+              "start": "4:10:00",
+              "end": "4:12:00"
+            }
+          ]
         },
         {
-            "id": 2,
-            "name": "minato",
-            "lastName": "namikaze",
-            "anime": ["naruto Shippuden"],
-            "icon": "/images/minato.jpg",
-            "cover": "/images/minato_cover1.jpg",
-            "totalAppearances": 2,
-            "episodes": [
-                {
-                    "id": 1,
-                    "title": "yondaime first appearsss",
-                    "number": 27,
-                    "arch": "yondaime appearss",
-                    "duration": "21:25",
-                    "apparitionTime": [
-                        {
-                            "start": "3:43",
-                            "end": "4:05"
-                        },
-                        {
-                            "start": "15:23",
-                            "end": "16:09"
-                        }
-                    ]
-
-                },
-                {
-                    "id": 2,
-                    "title": "yondaime second appearsss",
-                    "number": 41,
-                    "arch": "yondaime againn",
-                    "duration": "21:25",
-                    "apparitionTime": [
-                        {
-                            "start": "3:43",
-                            "end": "4:05"
-                        },
-                        {
-                            "start": "15:23",
-                            "end": "16:09"
-                        }
-                    ]
-
-                },
-                {
-                  "id": 3,
-                  "title": "yondaime first appearsss",
-                  "number": 27,
-                  "arch": "yondaime appearss",
-                  "duration": "21:25",
-                  "apparitionTime": [
-                      {
-                          "start": "3:43",
-                          "end": "4:05"
-                      },
-                      {
-                          "start": "15:23",
-                          "end": "16:09"
-                      }
-                  ]
-
-              },
-              {
-               "id": 4,
-               "title": "yondaime first appearsss",
-               "number": 27,
-               "arch": "yondaime appearss",
-               "duration": "21:25",
-               "apparitionTime": [
-                   {
-                       "start": "3:43",
-                       "end": "4:05"
-                   },
-                   {
-                     "start": "7:00",
-                     "end": "10:05"
-                 },
-                   {
-                       "start": "15:23",
-                       "end": "21:25"
-                   }
-               ]
-
-           }
-            ]
-        },
-
-        {
-            "id": 3,
-            "name": "itadori",
-            "lastName": "yuji",
-            "anime": ["Jujutsu Kaizen"],
-            "icon": "/images/itadori.jpg",
-            "cover": "https://animerant.com.br/wp-content/uploads/2023/05/habilidades-yuji-itadori.jpg",
-            "totalAppearances": 3,
-
-            "episodes": [
-                {
-                    "id": 1,
-                    "title": "Itadori first appearsss",
-                    "number": 27,
-                    "arch": "Itadori appearss",
-                    "duration": "21:25",
-                    "apparitionTime": [
-                        {
-                            "start": "3:43",
-                            "end": "4:05"
-                        },
-                        {
-                            "start": "15:23",
-                            "end": "16:09"
-                        }
-                    ]
-
-                },
-                {
-                    "id": 2,
-                    "title": "Itadori second appearsss",
-                    "number": 41,
-                    "arch": "Itadori againn",
-                    "duration": "21:25",
-                    "apparitionTime": [
-                        {
-                            "start": "3:43",
-                            "end": "4:05"
-                        },
-                        {
-                            "start": "15:23",
-                            "end": "16:09"
-                        }
-                    ]
-
-                }
-            ]
-        },
-
-        {
-            "id": 4,
-            "name": "gaara",
-            "lastName": "gaara",
-            "anime": ["Naruto Shippuden"],
-            "icon": "/images/gaara.jpg",
-            "cover": "https://i.pinimg.com/originals/34/3a/46/343a461f45de681226c28a0b465cdc32.png",
-            "totalAppearances": 2,
-
-            "episodes": [
-                {
-                    "id": 1,
-                    "title": " first appearsss",
-                    "number": 27,
-                    "arch": "Akatsuki appearss",
-                    "duration": "21:25",
-                    "apparitionTime": [
-                        {
-                            "start": "3:43",
-                            "end": "4:05"
-                        },
-                        {
-                            "start": "15:23",
-                            "end": "16:09"
-                        }
-                    ]
-
-                },
-                {
-                    "id": 2,
-                    "title": " second appearsss",
-                    "number": 41,
-                    "arch": "Akatsuki againn",
-                    "duration": "21:25",
-                    "apparitionTime": [
-                        {
-                            "start": "3:43",
-                            "end": "4:05"
-                        },
-                        {
-                            "start": "15:23",
-                            "end": "16:09"
-                        }
-                    ]
-
-                }
-            ]
+          "id": 2,
+          "title": "itachi second appearsss",
+          "number": 41,
+          "arch": "Akatsuki againn",
+          "duration": "21:25",
+          "apparitionTime": [
+            {
+              "start": "3:43",
+              "end": "4:05"
+            },
+            {
+              "start": "15:23",
+              "end": "16:29"
+            }
+          ]
         }
-        
-    ]
-    
+      ]
+    },
+    {
+      "id": 2,
+      "name": "minato",
+      "lastName": "namikaze",
+      "anime": ["naruto Shippuden"],
+      "icon": "/images/minato.jpg",
+      "cover": "/images/minato_cover1.jpg",
+      "totalAppearances": 2,
+      "episodes": [
+        {
+          "id": 1,
+          "title": "yondaime first appearsss",
+          "number": 27,
+          "arch": "yondaime appearss",
+          "duration": "21:25",
+          "apparitionTime": [
+            {
+              "start": "3:43",
+              "end": "4:05"
+            },
+            {
+              "start": "15:23",
+              "end": "16:09"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "title": "yondaime second appearsss",
+          "number": 41,
+          "arch": "yondaime againn",
+          "duration": "21:25",
+          "apparitionTime": [
+            {
+              "start": "3:43",
+              "end": "4:05"
+            },
+            {
+              "start": "15:23",
+              "end": "16:09"
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "title": "yondaime first appearsss",
+          "number": 27,
+          "arch": "yondaime appearss",
+          "duration": "21:25",
+          "apparitionTime": [
+            {
+              "start": "3:43",
+              "end": "4:05"
+            },
+            {
+              "start": "15:23",
+              "end": "16:09"
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "title": "yondaime first appearsss",
+          "number": 27,
+          "arch": "yondaime appearss",
+          "duration": "21:25",
+          "apparitionTime": [
+            {
+              "start": "3:43",
+              "end": "4:05"
+            },
+            {
+              "start": "7:00",
+              "end": "10:05"
+            },
+            {
+              "start": "15:23",
+              "end": "21:25"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "1495f63c-8945-4d7a-af1f-8dc598bc3a2e",
+      "name": "itadori",
+      "lastName": "yuji",
+      "anime": ["Jujutsu Kaizen"],
+      "icon": "/images/itadori.jpg",
+      "cover": "https://animerant.com.br/wp-content/uploads/2023/05/habilidades-yuji-itadori.jpg",
+      "totalAppearances": 3,
+
+      "episodes": [
+        {
+          "id": 1,
+          "title": "Itadori first appearsss",
+          "number": 27,
+          "arch": "Itadori appearss",
+          "duration": "21:25",
+          "apparitionTime": [
+            {
+              "start": "3:43",
+              "end": "4:05"
+            },
+            {
+              "start": "15:23",
+              "end": "16:09"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "title": "Itadori second appearsss",
+          "number": 41,
+          "arch": "Itadori againn",
+          "duration": "21:25",
+          "apparitionTime": [
+            {
+              "start": "3:43",
+              "end": "4:05"
+            },
+            {
+              "start": "15:23",
+              "end": "16:09"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": 4,
+      "name": "gaara",
+      "lastName": "gaara",
+      "anime": ["Naruto Shippuden"],
+      "icon": "/images/gaara.jpg",
+      "cover": "https://i.pinimg.com/originals/34/3a/46/343a461f45de681226c28a0b465cdc32.png",
+      "totalAppearances": 2,
+
+      "episodes": [
+        {
+          "id": 1,
+          "title": " first appearsss",
+          "number": 27,
+          "arch": "Akatsuki appearss",
+          "duration": "21:25",
+          "apparitionTime": [
+            {
+              "start": "3:43",
+              "end": "4:05"
+            },
+            {
+              "start": "15:23",
+              "end": "16:09"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "title": " second appearsss",
+          "number": 41,
+          "arch": "Akatsuki againn",
+          "duration": "21:25",
+          "apparitionTime": [
+            {
+              "start": "3:43",
+              "end": "4:05"
+            },
+            {
+              "start": "15:23",
+              "end": "16:09"
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }
